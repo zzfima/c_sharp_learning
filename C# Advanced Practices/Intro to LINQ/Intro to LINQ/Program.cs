@@ -62,6 +62,15 @@ namespace Intro_to_LINQ
             Console.WriteLine();
             Console.WriteLine($"Sum of dotProduct of A and B: {dotProduct.Sum()}");
 
+            Console.WriteLine();
+            int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            int[] numbersB = { 1, 3, 5, 7, 8 };
+            var pairs = from a in numbersA
+                        from b in numbersB
+                        where a < b
+                        select (a, b);
+            foreach (var n in pairs)
+                Console.Write(n + " ");
         }
     }
 }
