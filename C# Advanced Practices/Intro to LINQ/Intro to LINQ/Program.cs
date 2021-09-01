@@ -28,11 +28,20 @@ namespace Intro_to_LINQ
                 Console.Write(n + " ");
 
             Console.WriteLine();
-            var first3WACustomers = (from c in Customers.CustomerList
-                                     where c.Region == "WA"
-                                     select c).Take(3);
-            foreach (Customer n in first3WACustomers)
+            var first3WACustomers1 = (from c in Customers.CustomerList
+                                      where c.Region == "WA"
+                                      select c).Take(3);
+            foreach (Customer n in first3WACustomers1)
                 Console.Write(n.CustomerID + " ");
+
+            Console.WriteLine();
+            var first3WACustomers2 = (from c in Customers.CustomerList
+                                      from o in c.Orders
+                                      where c.Region == "WA"
+                                      select (c.CustomerID, o.OrderID, o.OrderDate))
+                                      .Take(3);
+            foreach (var n in first3WACustomers2)
+                Console.Write(n + " ");
         }
     }
 }
