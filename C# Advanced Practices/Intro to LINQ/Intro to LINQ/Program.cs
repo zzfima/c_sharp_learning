@@ -71,6 +71,22 @@ namespace Intro_to_LINQ
                         select (a, b);
             foreach (var n in pairs)
                 Console.Write(n + " ");
+
+            //Lazy
+            Console.WriteLine();
+            int i = 0;
+            var q = from n in numbers select ++i;
+            foreach (var n in q)
+                Console.WriteLine($"v={n}, i={i}");
+
+            //Eager
+            Console.WriteLine();
+            i = 0;
+            q = (from n in numbers select ++i).ToList();
+            foreach (var n in q)
+                Console.WriteLine($"v={n}, i={i}");
+
+
         }
     }
 }
