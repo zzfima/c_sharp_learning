@@ -47,6 +47,21 @@ namespace Intro_to_LINQ
             var firstNumbersLessThan6 = numbers.TakeWhile(n => n < 6);
             foreach (var n in firstNumbersLessThan6)
                 Console.Write(n + " ");
+
+            Console.WriteLine();
+            var wordsA = new string[] { "cherry", "apple", "blueberry" };
+            var wordsB = new string[] { "cherry", "apple", "blueberry" };
+            Console.WriteLine($"The sequence is match: {wordsA.SequenceEqual(wordsB)}");
+
+            Console.WriteLine();
+            int[] vectorA = { 0, 2, 4, 5, 6 };
+            int[] vectorB = { 1, 3, 5, 7, 8 };
+            var dotProduct = vectorA.Zip(vectorB, (a, b) => a * b);
+            foreach (var n in dotProduct)
+                Console.Write(n + " ");
+            Console.WriteLine();
+            Console.WriteLine($"Sum of dotProduct of A and B: {dotProduct.Sum()}");
+
         }
     }
 }
