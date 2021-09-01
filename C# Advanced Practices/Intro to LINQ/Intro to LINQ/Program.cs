@@ -42,6 +42,11 @@ namespace Intro_to_LINQ
                                       .Take(3);
             foreach (var n in first3WACustomers2)
                 Console.Write(n + " ");
+
+            Console.WriteLine();
+            var firstNumbersLessThan6 = numbers.TakeWhile(n => n < 6);
+            foreach (var n in firstNumbersLessThan6)
+                Console.Write(n + " ");
         }
     }
 }
