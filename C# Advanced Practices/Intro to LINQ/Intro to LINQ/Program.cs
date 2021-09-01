@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Intro_to_LINQ
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -27,7 +27,12 @@ namespace Intro_to_LINQ
             foreach (var n in textNums)
                 Console.Write(n + " ");
 
-
+            Console.WriteLine();
+            var first3WACustomers = (from c in Customers.CustomerList
+                                     where c.Region == "WA"
+                                     select c).Take(3);
+            foreach (Customer n in first3WACustomers)
+                Console.Write(n.CustomerID + " ");
         }
     }
 }
