@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Implementations
+namespace Models
 {
     /// <summary>
     /// Person attributes

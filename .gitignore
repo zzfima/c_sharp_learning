@@ -17,3 +17,5 @@
 /PersonalManagement/Interfaces/obj
 /PersonalManagement/Interfaces/bin/Debug/net5.0
 /PersonalManagement/.vs/PersonalManagement/DesignTimeBuild/.dtbcache.v2
+/PersonalManagement/Models/obj
+/PersonalManagement/Models/bin/Debug/net5.0

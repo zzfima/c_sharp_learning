@@ -1,4 +1,4 @@
-﻿namespace Implementations
+﻿namespace Models
 {
     /// <summary>
     /// Gender enumeration
