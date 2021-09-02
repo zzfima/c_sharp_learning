@@ -1,0 +1,51 @@
+﻿<Window x:Class="PersonalManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalManagement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dgContent">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="C1" Width="100" Binding="{Binding C1}"/>
+                <DataGridTextColumn Header="C2" Width="100" Binding="{Binding C2}"/>
+                <DataGridTemplateColumn Header="Edit" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Text="C1:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="2" x:Name="txtC1" />
+
+        <TextBlock Text="C2:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtC2" />
+
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Add" Width="200" Margin="2" x:Name="btnAdd" 
+                Click="btnAdd_Click"/>
+    </Grid>
+</Window>
