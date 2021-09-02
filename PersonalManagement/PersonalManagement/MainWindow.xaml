@@ -23,7 +23,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="FirstName" Width="100" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="LastName" Width="100" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="DateOfBirth" Width="100" Binding="{Binding DateOfBirth, StringFormat=dd-MM-yyyy}"/>
+                <DataGridTextColumn Header="DateOfBirth" Width="100" Binding="{Binding DateOfBirth, StringFormat=dd/MM/yyyy}"/>
                 <DataGridTextColumn Header="Gender" Width="100" Binding="{Binding Gender}"/>
                 <DataGridTemplateColumn Header="Edit" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
@@ -49,7 +49,7 @@
         <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtLastName" />
 
         <TextBlock Text="DateOfBirth:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="2" x:Name="txtDateOfBirth" Text="{Binding Path=DateTimeValue, StringFormat=dd-MM-yyyy}"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="2" x:Name="txtDateOfBirth" Text="{Binding Path=DateTimeValue, StringFormat=dd/MM/yyyy}"/>
 
         <TextBlock Text="Gender:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
         <TextBox Grid.Row="4" Grid.Column="1" Margin="2" x:Name="txtGender" />

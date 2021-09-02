@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<persons>
-  <person>
+<Persons>
+  <Person>
     <FirstName>Moshe</FirstName>
     <LastName>Cohen</LastName>
-    <DateOfBirth>1997-08-25</DateOfBirth>
+    <DateOfBirth>11/04/1997</DateOfBirth>
     <Gender>Male</Gender>
-  </person>
-  <person>
+  </Person>
+  <Person>
     <FirstName>Avi</FirstName>
     <LastName>Buhbut</LastName>
-    <DateOfBirth>1977-06-11</DateOfBirth>
+    <DateOfBirth>11/05/2000</DateOfBirth>
     <Gender>Male</Gender>
-  </person>
-</persons>
+  </Person>
+</Persons>

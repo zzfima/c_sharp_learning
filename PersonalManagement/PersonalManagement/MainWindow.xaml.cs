@@ -4,6 +4,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Windows;
 
 namespace PersonalManagement
@@ -13,21 +14,23 @@ namespace PersonalManagement
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<Person> myObjects;
+        ObservableCollection<Person> _persons;
+        IRepository<Person> _repository;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            IRepository<Person> repository = new ProductXMLRepository("PersonsData.xml");
-            IEnumerable<Person> pustomerList = repository.ReadAll();
-            myObjects = new ObservableCollection<Person>(pustomerList);
-            this.dgContent.ItemsSource = myObjects;
+            _repository = new ProductXMLRepository("PersonsData.xml");
+            IEnumerable<Person> pustomerList = _repository.ReadAll();
+            _persons = new ObservableCollection<Person>(pustomerList);
+            this.dgContent.ItemsSource = _persons;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             DateTime dt;
-            DateTime.TryParse(this.txtDateOfBirth.Text, out dt);
+            DateTime.TryParseExact(this.txtDateOfBirth.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt);
 
             Gender gender = (Gender)Enum.Parse(typeof(Gender), this.txtGender.Text);
 
@@ -38,11 +41,13 @@ namespace PersonalManagement
                 DateOfBirth = dt,
                 Gender = gender
             };
-            myObjects.Add(myObject);
+
+            _repository.Add(myObject);
+            _persons.Add(myObject);
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            myObjects.Remove(this.dgContent.SelectedItem as Person);
+            _persons.Remove(this.dgContent.SelectedItem as Person);
         }
     }
 }
