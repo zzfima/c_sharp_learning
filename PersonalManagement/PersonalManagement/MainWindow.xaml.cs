@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 
 namespace PersonalManagement
@@ -8,16 +9,16 @@ namespace PersonalManagement
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<MyObject> myObjects;
+        ObservableCollection<Pesrson> myObjects;
         public MainWindow()
         {
             InitializeComponent();
 
-            myObjects = new ObservableCollection<MyObject>()
+            myObjects = new ObservableCollection<Pesrson>()
             {
-                new MyObject(){C1 = "Jimmy", C2 = "Yang"},
-                new MyObject(){C1 = "Marvin", C2 = "Guo"},
-                new MyObject(){C1 = "Franklin", C2 = "Chen"}
+                new Pesrson(){FirstName = "Moshe", LastName = "Cohen", DateOfBirth = new System.DateTime(1977, 11,11), Gender = Gender.Male},
+                new Pesrson(){FirstName = "Lea", LastName = "Maman", DateOfBirth = new System.DateTime(1978, 10,10), Gender = Gender.Female},
+                new Pesrson(){FirstName = "Avi", LastName = "Abuhzira", DateOfBirth = new System.DateTime(1979, 9,9), Gender = Gender.Male}
             };
 
             this.dgContent.ItemsSource = myObjects;
@@ -25,7 +26,18 @@ namespace PersonalManagement
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            MyObject myObject = new MyObject() { C1 = this.txtC1.Text, C2 = this.txtC2.Text };
+            DateTime dt;
+            DateTime.TryParse(this.txtDateOfBirth.Text, out dt);
+
+            Gender gender = (Gender)Enum.Parse(typeof(Gender), this.txtGender.Text);
+
+            Pesrson myObject = new Pesrson()
+            {
+                FirstName = this.txtFirstName.Text,
+                LastName = this.txtLastName.Text,
+                DateOfBirth = dt,
+                Gender = gender
+            };
             myObjects.Add(myObject);
         }
     }

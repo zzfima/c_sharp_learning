@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonalManagement"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -20,8 +23,10 @@
 
         <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dgContent">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="C1" Width="100" Binding="{Binding C1}"/>
-                <DataGridTextColumn Header="C2" Width="100" Binding="{Binding C2}"/>
+                <DataGridTextColumn Header="FirstName" Width="100" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="LastName" Width="100" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="DateOfBirth" Width="100" Binding="{Binding DateOfBirth, StringFormat=dd-MM-yyyy}"/>
+                <DataGridTextColumn Header="Gender" Width="100" Binding="{Binding Gender}"/>
                 <DataGridTemplateColumn Header="Edit" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -39,13 +44,19 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <TextBlock Text="C1:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="2" x:Name="txtC1" />
+        <TextBlock Text="First Name:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="2" x:Name="txtFirstName" />
 
-        <TextBlock Text="C2:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtC2" />
+        <TextBlock Text="LastName:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtLastName" />
 
-        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Add" Width="200" Margin="2" x:Name="btnAdd" 
+        <TextBlock Text="DateOfBirth:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="2" x:Name="txtDateOfBirth" Text="{Binding Path=DateTimeValue, StringFormat=dd-MM-yyyy}"/>
+
+        <TextBlock Text="Gender:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="2" x:Name="txtGender" />
+
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Add" Width="200" Margin="2" x:Name="btnAdd" 
                 Click="btnAdd_Click"/>
     </Grid>
 </Window>
