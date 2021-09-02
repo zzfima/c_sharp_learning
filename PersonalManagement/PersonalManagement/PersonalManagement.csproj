@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <None Update="PersonsData.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

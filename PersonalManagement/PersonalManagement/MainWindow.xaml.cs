@@ -47,6 +47,7 @@ namespace PersonalManagement
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            _repository.Remove(this.dgContent.SelectedItem as Person);
             _persons.Remove(this.dgContent.SelectedItem as Person);
         }
     }

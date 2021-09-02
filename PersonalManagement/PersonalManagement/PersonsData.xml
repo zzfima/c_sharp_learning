@@ -3,13 +3,13 @@
   <Person>
     <FirstName>Moshe</FirstName>
     <LastName>Cohen</LastName>
-    <DateOfBirth>11/04/1997</DateOfBirth>
+    <DateOfBirth>11/4/1997</DateOfBirth>
     <Gender>Male</Gender>
   </Person>
   <Person>
     <FirstName>Avi</FirstName>
     <LastName>Buhbut</LastName>
-    <DateOfBirth>11/05/2000</DateOfBirth>
+    <DateOfBirth>11/5/2000</DateOfBirth>
     <Gender>Male</Gender>
   </Person>
 </Persons>

@@ -46,10 +46,15 @@ namespace Implementations
         {
             XDocument doc = XDocument.Load(_pathToXML);
             IEnumerable<XElement> nodes = doc.Descendants("Person");
-            nodes.Where(x => 
-            DateTime.Compare(DateTime.Parse(x.Element("DateOfBirth").Value), entity.DateOfBirth) > 0).Remove();
 
-            doc.Save("output.xml");
+            nodes.Where(node =>
+            (string)node.Element("FirstName") == entity.FirstName &&
+            (string)node.Element("LastName") == entity.LastName &&
+            (string)node.Element("DateOfBirth") == entity.DateOfBirth.ToShortDateString() &&
+            (string)node.Element("Gender") == entity.Gender.ToString())
+                .Remove();
+
+            doc.Save(_pathToXML);
         }
 
         public void Update(Person entity)
