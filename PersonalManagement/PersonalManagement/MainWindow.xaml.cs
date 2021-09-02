@@ -9,16 +9,16 @@ namespace PersonalManagement
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<Pesrson> myObjects;
+        ObservableCollection<Person> myObjects;
         public MainWindow()
         {
             InitializeComponent();
 
-            myObjects = new ObservableCollection<Pesrson>()
+            myObjects = new ObservableCollection<Person>()
             {
-                new Pesrson(){FirstName = "Moshe", LastName = "Cohen", DateOfBirth = new System.DateTime(1977, 11,11), Gender = Gender.Male},
-                new Pesrson(){FirstName = "Lea", LastName = "Maman", DateOfBirth = new System.DateTime(1978, 10,10), Gender = Gender.Female},
-                new Pesrson(){FirstName = "Avi", LastName = "Abuhzira", DateOfBirth = new System.DateTime(1979, 9,9), Gender = Gender.Male}
+                new Person(){FirstName = "Moshe", LastName = "Cohen", DateOfBirth = new System.DateTime(1977, 11,11), Gender = Gender.Male},
+                new Person(){FirstName = "Lea", LastName = "Maman", DateOfBirth = new System.DateTime(1978, 10,10), Gender = Gender.Female},
+                new Person(){FirstName = "Avi", LastName = "Abuhzira", DateOfBirth = new System.DateTime(1979, 9,9), Gender = Gender.Male}
             };
 
             this.dgContent.ItemsSource = myObjects;
@@ -31,7 +31,7 @@ namespace PersonalManagement
 
             Gender gender = (Gender)Enum.Parse(typeof(Gender), this.txtGender.Text);
 
-            Pesrson myObject = new Pesrson()
+            Person myObject = new Person()
             {
                 FirstName = this.txtFirstName.Text,
                 LastName = this.txtLastName.Text,
@@ -39,6 +39,10 @@ namespace PersonalManagement
                 Gender = gender
             };
             myObjects.Add(myObject);
+        }
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            myObjects.Remove(this.dgContent.SelectedItem as Person);
         }
     }
 }

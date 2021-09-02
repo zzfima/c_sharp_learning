@@ -6,9 +6,9 @@ namespace PersonalManagement
     /// Person attributes
     /// Sample POCO object
     /// </summary>
-    internal class Pesrson
+    internal class Person
     {
-        public Pesrson()
+        public Person()
         {
 
         }
