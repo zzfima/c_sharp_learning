@@ -3,6 +3,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace Implementations
@@ -43,7 +44,12 @@ namespace Implementations
 
         public void Remove(Person entity)
         {
-            throw new NotImplementedException();
+            XDocument doc = XDocument.Load(_pathToXML);
+            IEnumerable<XElement> nodes = doc.Descendants("Person");
+            nodes.Where(x => 
+            DateTime.Compare(DateTime.Parse(x.Element("DateOfBirth").Value), entity.DateOfBirth) > 0).Remove();
+
+            doc.Save("output.xml");
         }
 
         public void Update(Person entity)
