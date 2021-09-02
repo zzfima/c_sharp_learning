@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace PersonalManagement
+namespace Implementations
 {
     /// <summary>
     /// Person attributes
     /// Sample POCO object
     /// </summary>
-    internal class Person
+    public class Person
     {
         public Person()
         {

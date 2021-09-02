@@ -12,3 +12,8 @@
 /PersonalManagement/PersonalManagement/obj
 /PersonalManagement/PersonalManagement/bin/Debug/net5.0-windows
 /PersonalManagement/.vs/PersonalManagement/v16
+/PersonalManagement/Implementations/obj
+/PersonalManagement/Implementations/bin/Debug/net5.0
+/PersonalManagement/Interfaces/obj
+/PersonalManagement/Interfaces/bin/Debug/net5.0
+/PersonalManagement/.vs/PersonalManagement/DesignTimeBuild/.dtbcache.v2

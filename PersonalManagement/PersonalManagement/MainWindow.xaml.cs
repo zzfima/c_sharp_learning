@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Implementations;
+using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Xml.Linq;
 
 namespace PersonalManagement
 {
@@ -18,19 +16,10 @@ namespace PersonalManagement
         public MainWindow()
         {
             InitializeComponent();
-            string personsXml = System.IO.File.ReadAllText("PersonsData.xml");
-            List<Person> pustomerList = (from e in XDocument.Parse(personsXml).Root.Elements("person")
-                                         select new Person
-                                         {
-                                             FirstName = (string)e.Element("FirstName"),
-                                             LastName = (string)e.Element("LastName"),
-                                             DateOfBirth = (DateTime)e.Element("DateOfBirth"),
-                                             Gender = (Gender)Enum.Parse(typeof(Gender), (string)e.Element("Gender"))
-                                         }).ToList();
 
-
+            IRepository<Person> repository = new ProductXMLRepository("PersonsData.xml");
+            IEnumerable<Person> pustomerList = repository.ReadAll();
             myObjects = new ObservableCollection<Person>(pustomerList);
-
             this.dgContent.ItemsSource = myObjects;
         }
 
