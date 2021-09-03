@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="itext7" Version="7.1.16" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>

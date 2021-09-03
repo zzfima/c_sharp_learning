@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace TestProject1
 {
-    public class Tests
+    public class UnitTestPersistence
     {
         string _pathSource = "../../../../PersonalManagement/bin/Debug/net5.0-windows/PersonsData.xml";
 
