@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace PersonalManagement.ViewModel
 {
-    class VMPerson
+    public class VMPerson
     {
         private ObservableCollection<PersonExport> _personsList;
         private PersonExport _selectedPerson;
@@ -18,7 +18,7 @@ namespace PersonalManagement.ViewModel
                 _personsList.Add(new PersonExport { Person = p, IsExport = false });
 
             SelectedPerson = _personsList[0];
-            NewPerson = new PersonExport { Person = new Person { DateOfBirth = System.DateTime.Today}, IsExport = false };
+            NewPerson = new PersonExport { Person = new Person { DateOfBirth = System.DateTime.Today }, IsExport = false };
         }
 
         public PersonExport SelectedPerson
@@ -37,21 +37,6 @@ namespace PersonalManagement.ViewModel
         {
             get { return _personsList; }
             set { _personsList = value; }
-        }
-
-        private ICommand mUpdater;
-        public ICommand UpdateCommand
-        {
-            get
-            {
-                if (mUpdater == null)
-                    mUpdater = new Updater();
-                return mUpdater;
-            }
-            set
-            {
-                mUpdater = value;
-            }
         }
     }
 }

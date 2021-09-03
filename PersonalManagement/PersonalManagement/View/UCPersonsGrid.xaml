@@ -16,14 +16,6 @@
                 <DataGridTextColumn IsReadOnly="True" Header="DateOfBirth" Width="100" Binding="{Binding Person.DateOfBirth, StringFormat=dd/MM/yyyy}"/>
                 <DataGridTextColumn IsReadOnly="True" Header="Gender" Width="100" Binding="{Binding Person.Gender}"/>
                 <DataGridCheckBoxColumn IsReadOnly="False" Header="Export" Binding="{Binding IsExport}" Width="100"/>
-
-                <DataGridTemplateColumn Header="Delete" Width="100">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Delete" Command="{Binding Path=DeleteCommad}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -22,8 +22,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -41,17 +40,18 @@
 
             <StackPanel Orientation="Vertical">
                 <uc:UCPerson 
-                Margin="10" 
-                HorizontalAlignment="Left"
-                DataContext="{Binding SelectedPerson}"/>
+                    Margin="10" 
+                    HorizontalAlignment="Left"
+                    DataContext="{Binding SelectedPerson}"/>
+                <Button Content="Delete Person" Width="200" Margin="10" Click="btnDelete_Click"/>
                 <Button Content="Edit Person" Width="200"  Click="btnEdit_Click"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <uc:UCPerson 
-                Margin="10"  
-                HorizontalAlignment="Left"
-                DataContext="{Binding NewPerson}"/>
+                <uc:UCPerson
+                    Margin="10"  
+                    HorizontalAlignment="Left"
+                    DataContext="{Binding NewPerson}"/>
                 <Button Content="Add Person" Width="200" Click="btnAdd_Click"/>
             </StackPanel>
 
