@@ -11,7 +11,7 @@ using System;
 namespace Implementations
 {
     /// <summary>
-    /// Export object to PDF file
+    /// Export object to PDF file.
     /// </summary>
     public class PDFExporter : IDisposable
     {
