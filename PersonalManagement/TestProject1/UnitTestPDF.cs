@@ -1,4 +1,6 @@
 using Implementations;
+using iText.Kernel.Colors;
+using iText.Layout.Properties;
 using NUnit.Framework;
 using System.IO;
 
@@ -29,6 +31,14 @@ namespace TestProject1
                 exporter.AddHorizontalLineSeparator();
                 exporter.AddHeader("Sub Test", iText.Layout.Properties.TextAlignment.LEFT, 11.5f);
                 exporter.AddImage("download.png");
+
+                string[] headers = { "T", "Y", "E" };
+                string[,] body = { { "t1", "y1", "e1" }, { "t2", "y2", "e2" }, { "t3", "y3", "e3" }, { "t4", "y4", "e4" } };
+
+                exporter.AddTable(
+                    3, true,
+                    ColorConstants.GRAY, TextAlignment.CENTER, headers,
+                    ColorConstants.WHITE, TextAlignment.LEFT, body);
             }
         }
     }
