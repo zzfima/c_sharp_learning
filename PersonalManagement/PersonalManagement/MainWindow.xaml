@@ -1,5 +1,6 @@
 ﻿<Window x:Class="PersonalManagement.MainWindow"
         xmlns:models="clr-namespace:Models;assembly=Models"
+        xmlns:uc="clr-namespace:PersonalManagement.View"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -36,7 +37,7 @@
                 <DataGridTextColumn Header="DateOfBirth" Width="100" Binding="{Binding Person.DateOfBirth, StringFormat=dd/MM/yyyy}"/>
                 <DataGridTextColumn Header="Gender" Width="100" Binding="{Binding Person.Gender}"/>
                 <DataGridCheckBoxColumn Header="Export" Binding="{Binding IsExport}" Width="100"/>
-                
+
                 <DataGridTemplateColumn Header="Edit" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -54,34 +55,16 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel Grid.Row="1" Margin="10 10 0 0" Width="200" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left">
-            <Grid Background="LightGray">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="4*"/>
-                </Grid.ColumnDefinitions>
+        <uc:UCPerson 
+            x:Name="ucPerson" 
+            Grid.Row="1" 
+            Margin="10 10 0 0" 
+            Width="200" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="2" 
+            HorizontalAlignment="Left"
+            DataContext="{Binding VMPerson}"/>
 
-                <Label Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="0">New Person</Label>
-                <TextBlock Text="First Name:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="2" x:Name="txtFirstName" />
-
-                <TextBlock Text="LastName:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtLastName" />
-
-                <TextBlock Text="DateOfBirth:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <DatePicker Grid.Row="3" Grid.Column="1" Margin="2" x:Name="dateOfBirth"/>
-
-                <TextBlock Text="Gender:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <ComboBox Grid.Row="4" Grid.Column="1" Margin="2" MinWidth="150" x:Name="comboBoxGender" ItemsSource="{Binding Source={StaticResource genderEnum}}" SelectedIndex="0"/>
-            </Grid>
-        </StackPanel>
         <StackPanel HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button Content="Add Person" Width="200" Margin="10 0 0 0" Click="btnAdd_Click"/>
             <Button Content="Export to PDF" Width="200" Margin="10 0 0 0" Click="btnExport_Click"/>

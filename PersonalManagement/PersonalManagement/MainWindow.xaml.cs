@@ -51,13 +51,13 @@ namespace PersonalManagement
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Gender gender = (Gender)this.comboBoxGender.SelectedItem;
+            Gender gender = (Gender)ucPerson.comboBoxGender.SelectedItem;
 
             Person person = new Person()
             {
-                FirstName = this.txtFirstName.Text,
-                LastName = this.txtLastName.Text,
-                DateOfBirth = this.dateOfBirth.DisplayDate,
+                FirstName = ucPerson.txtFirstName.Text,
+                LastName = ucPerson.txtLastName.Text,
+                DateOfBirth = ucPerson.dateOfBirth.DisplayDate,
                 Gender = gender
             };
 
