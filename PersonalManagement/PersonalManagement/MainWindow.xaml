@@ -3,15 +3,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -42,19 +40,37 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <TextBlock Text="First Name:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="2" x:Name="txtFirstName" />
+        <StackPanel Grid.Row="1" Margin="10 10 0 0" Width="200" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left">
+            <Grid Background="LightGray">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
 
-        <TextBlock Text="LastName:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtLastName" />
+                <Label Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="0">New Person</Label>
+                <TextBlock Text="First Name:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="2" x:Name="txtFirstName" />
 
-        <TextBlock Text="DateOfBirth:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="2" x:Name="txtDateOfBirth" Text="{Binding Path=DateTimeValue, StringFormat=dd/MM/yyyy}"/>
+                <TextBlock Text="LastName:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtLastName" />
 
-        <TextBlock Text="Gender:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="2" x:Name="txtGender" />
+                <TextBlock Text="DateOfBirth:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="2" x:Name="txtDateOfBirth" Text="{Binding Path=DateTimeValue, StringFormat=dd/MM/yyyy}"/>
 
-        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Add" Width="200" Margin="2" x:Name="btnAdd" 
-                Click="btnAdd_Click"/>
+                <TextBlock Text="Gender:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="2" x:Name="txtGender" />
+            </Grid>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Content="Add Person" Width="200" Margin="10 0 0 0" Click="btnAdd_Click"/>
+            <Button Content="Export to PDF" Width="200" Margin="10 0 0 0" Click="btnExport_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

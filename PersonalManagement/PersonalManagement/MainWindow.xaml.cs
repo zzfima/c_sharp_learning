@@ -69,5 +69,9 @@ namespace PersonalManagement
             _serviceProvider.GetService<IRepository<Person>>().Remove(this.dgContent.SelectedItem as Person);
             _persons.Remove(this.dgContent.SelectedItem as Person);
         }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
