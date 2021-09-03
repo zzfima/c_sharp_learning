@@ -48,16 +48,13 @@ namespace PersonalManagement
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            DateTime dt;
-            DateTime.TryParseExact(this.txtDateOfBirth.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt);
-
             Gender gender = (Gender)Enum.Parse(typeof(Gender), this.txtGender.Text);
 
             Person myObject = new Person()
             {
                 FirstName = this.txtFirstName.Text,
                 LastName = this.txtLastName.Text,
-                DateOfBirth = dt,
+                DateOfBirth = this.dateOfBirth.DisplayDate,
                 Gender = gender
             };
 

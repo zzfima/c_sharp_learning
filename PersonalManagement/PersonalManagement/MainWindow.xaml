@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
@@ -62,7 +62,7 @@
                 <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtLastName" />
 
                 <TextBlock Text="DateOfBirth:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Margin="2" x:Name="txtDateOfBirth" Text="{Binding Path=DateTimeValue, StringFormat=dd/MM/yyyy}"/>
+                <DatePicker Grid.Row="3" Grid.Column="1" Margin="2" x:Name="dateOfBirth"/>
 
                 <TextBlock Text="Gender:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Margin="2" x:Name="txtGender" />
