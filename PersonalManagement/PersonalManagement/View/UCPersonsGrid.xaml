@@ -8,6 +8,7 @@
     <Grid>
         <DataGrid AutoGenerateColumns="False" 
                   CanUserAddRows="False"
+                  SelectionMode="Single"
                   SelectedItem="{Binding SelectedPerson}"
                   ItemsSource="{Binding Persons}">
             <DataGrid.Columns>
