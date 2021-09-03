@@ -46,7 +46,7 @@ namespace PersonalManagement
 
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             Person person = new Person()
             {
@@ -59,6 +59,31 @@ namespace PersonalManagement
             _serviceProvider.GetService<IRepository<Person>>().Add(person);
             _vMPerson.Persons.Add(new PersonExport { Person = person, IsExport = false });
         }
+
+        /// <summary>
+        /// Add new Person
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Person newPerson = new Person()
+            {
+                FirstName = _vMPerson.NewPerson.Person.FirstName,
+                LastName = _vMPerson.NewPerson.Person.LastName,
+                DateOfBirth = _vMPerson.NewPerson.Person.DateOfBirth,
+                Gender = _vMPerson.NewPerson.Person.Gender
+            };
+
+            _serviceProvider.GetService<IRepository<Person>>().Add(newPerson);
+            _vMPerson.Persons.Add(new PersonExport { Person = newPerson, IsExport = false });
+        }
+
+        /// <summary>
+        /// Delete Person
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             PersonExport personExportToDelete = _vMPerson.SelectedPerson;

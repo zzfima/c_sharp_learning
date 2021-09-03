@@ -9,6 +9,7 @@ namespace PersonalManagement.ViewModel
     {
         private ObservableCollection<PersonExport> _personsList;
         private PersonExport _selectedPerson;
+        private PersonExport _newPerson;
 
         public VMPerson(IEnumerable<Person> personsList)
         {
@@ -17,12 +18,19 @@ namespace PersonalManagement.ViewModel
                 _personsList.Add(new PersonExport { Person = p, IsExport = false });
 
             SelectedPerson = _personsList[0];
+            NewPerson = new PersonExport { Person = new Person { DateOfBirth = System.DateTime.Today}, IsExport = false };
         }
 
         public PersonExport SelectedPerson
         {
             get { return _selectedPerson; }
             set { _selectedPerson = value; }
+        }
+
+        public PersonExport NewPerson
+        {
+            get { return _newPerson; }
+            set { _newPerson = value; }
         }
 
         public ObservableCollection<PersonExport> Persons
