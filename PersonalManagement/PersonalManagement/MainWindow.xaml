@@ -30,7 +30,13 @@
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dgContent">
+        <DataGrid Grid.Row="0" 
+                  Grid.Column="0" 
+                  Grid.ColumnSpan="2" 
+                  AutoGenerateColumns="False" 
+                  CanUserAddRows="False"
+                  SelectedItem="{Binding SelectedPerson}"
+                  ItemsSource="{Binding Persons}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="FirstName" Width="100" Binding="{Binding Person.FirstName}"/>
                 <DataGridTextColumn Header="LastName" Width="100" Binding="{Binding Person.LastName}"/>
@@ -63,7 +69,7 @@
             Grid.Column="0" 
             Grid.ColumnSpan="2" 
             HorizontalAlignment="Left"
-            DataContext="{Binding VMPerson}"/>
+            DataContext="{Binding SelectedPerson}"/>
 
         <StackPanel HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button Content="Add Person" Width="200" Margin="10 0 0 0" Click="btnAdd_Click"/>

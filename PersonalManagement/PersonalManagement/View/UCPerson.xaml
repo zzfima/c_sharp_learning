@@ -31,16 +31,16 @@
 
             <Label Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="0">New Person</Label>
             <TextBlock Text="First Name:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="2" x:Name="txtFirstName" />
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="2" Text="{Binding Person.FirstName}"/>
 
             <TextBlock Text="LastName:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="2" x:Name="txtLastName" />
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="2" Text="{Binding Person.LastName}" />
 
             <TextBlock Text="DateOfBirth:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <DatePicker Grid.Row="3" Grid.Column="1" Margin="2" x:Name="dateOfBirth"/>
+            <DatePicker Grid.Row="3" Grid.Column="1" Margin="2" SelectedDate="{Binding Person.DateOfBirth}"/>
 
             <TextBlock Text="Gender:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <ComboBox Grid.Row="4" Grid.Column="1" Margin="2" MinWidth="150" x:Name="comboBoxGender" ItemsSource="{Binding Source={StaticResource genderEnum}}" SelectedIndex="0"/>
+            <ComboBox Grid.Row="4" Grid.Column="1" Margin="2" MinWidth="150" ItemsSource="{Binding Source={StaticResource genderEnum}}" SelectedItem="{Binding Person.Gender}"/>
         </Grid>
     </StackPanel>
 </UserControl>

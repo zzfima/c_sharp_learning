@@ -3,8 +3,8 @@ using Interfaces;
 using iText.Kernel.Colors;
 using Microsoft.Extensions.DependencyInjection;
 using Models;
+using PersonalManagement.ViewModel;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
@@ -16,7 +16,7 @@ namespace PersonalManagement
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<PersonExport> _personExportObservable;
+        VMPerson _vMPerson;
         ServiceProvider _serviceProvider;
         public MainWindow()
         {
@@ -25,11 +25,8 @@ namespace PersonalManagement
             Bootstrap();
 
             IEnumerable<Person> personsList = _serviceProvider.GetService<IRepository<Person>>().ReadAll();
-            _personExportObservable = new ObservableCollection<PersonExport>();
-            foreach (Person p in personsList)
-                _personExportObservable.Add(new PersonExport { Person = p, IsExport = false });
-            this.dgContent.ItemsSource = _personExportObservable;
-            _personExportObservable.CollectionChanged += Changed;
+            _vMPerson = new VMPerson(personsList);
+            this.DataContext = _vMPerson;
         }
 
         private void Bootstrap()
@@ -51,31 +48,29 @@ namespace PersonalManagement
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Gender gender = (Gender)ucPerson.comboBoxGender.SelectedItem;
-
             Person person = new Person()
             {
-                FirstName = ucPerson.txtFirstName.Text,
-                LastName = ucPerson.txtLastName.Text,
-                DateOfBirth = ucPerson.dateOfBirth.DisplayDate,
-                Gender = gender
+                FirstName = _vMPerson.SelectedPerson.Person.FirstName,
+                LastName = _vMPerson.SelectedPerson.Person.LastName,
+                DateOfBirth = _vMPerson.SelectedPerson.Person.DateOfBirth,
+                Gender = _vMPerson.SelectedPerson.Person.Gender
             };
 
             _serviceProvider.GetService<IRepository<Person>>().Add(person);
-            _personExportObservable.Add(new PersonExport { Person = person, IsExport = false });
+            _vMPerson.Persons.Add(new PersonExport { Person = person, IsExport = false });
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            PersonExport personExportToDelete = this.dgContent.SelectedItem as PersonExport;
+            PersonExport personExportToDelete = _vMPerson.SelectedPerson;
             _serviceProvider.GetService<IRepository<Person>>().Remove(personExportToDelete.Person);
-            _personExportObservable.Remove(this.dgContent.SelectedItem as PersonExport);
+            _vMPerson.Persons.Remove(personExportToDelete);
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             using (ITextSharpExporter exporter = _serviceProvider.GetService<ITextSharpExporter>())
             {
-                List<PersonExport> personsToExport = (from p in this._personExportObservable
+                List<PersonExport> personsToExport = (from p in _vMPerson.Persons
                                                       where p.IsExport
                                                       select p).ToList();
 
