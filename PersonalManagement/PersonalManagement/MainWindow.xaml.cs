@@ -1,5 +1,6 @@
 ﻿using Implementations;
 using Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -16,17 +17,26 @@ namespace PersonalManagement
     public partial class MainWindow : Window
     {
         ObservableCollection<Person> _persons;
-        IRepository<Person> _repository;
-
+        ServiceProvider _serviceProvider;
         public MainWindow()
         {
             InitializeComponent();
 
-            _repository = new ProductXMLRepository("PersonsData.xml");
-            IEnumerable<Person> pustomerList = _repository.ReadAll();
+            Bootstrap();
+
+            IEnumerable<Person> pustomerList = _serviceProvider.GetService<IRepository<Person>>().ReadAll();
             _persons = new ObservableCollection<Person>(pustomerList);
             this.dgContent.ItemsSource = _persons;
             _persons.CollectionChanged += Changed;
+        }
+
+        private void Bootstrap()
+        {
+            IServiceCollection services = new ServiceCollection();
+
+            services.AddSingleton<IRepository<Person>>(new ProductXMLRepository("PersonsData.xml"));
+
+            _serviceProvider = services.BuildServiceProvider();
         }
 
         private void Changed(object sender, NotifyCollectionChangedEventArgs e)
@@ -50,12 +60,12 @@ namespace PersonalManagement
                 Gender = gender
             };
 
-            _repository.Add(myObject);
+            _serviceProvider.GetService<IRepository<Person>>().Add(myObject);
             _persons.Add(myObject);
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            _repository.Remove(this.dgContent.SelectedItem as Person);
+            _serviceProvider.GetService<IRepository<Person>>().Remove(this.dgContent.SelectedItem as Person);
             _persons.Remove(this.dgContent.SelectedItem as Person);
         }
     }
