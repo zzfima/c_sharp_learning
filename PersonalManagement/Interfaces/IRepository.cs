@@ -23,7 +23,7 @@ namespace Interfaces
         /// Update Entity of repository
         /// </summary>
         /// <param name="entity">entity to update</param>
-        void Update(T entity);
+        void Update(T oldEntity, T newEntity);
 
         /// <summary>
         /// Remove Entity from repository

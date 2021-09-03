@@ -3,7 +3,6 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace Implementations
@@ -45,21 +44,38 @@ namespace Implementations
         public void Remove(Person entity)
         {
             XDocument doc = XDocument.Load(_pathToXML);
-            IEnumerable<XElement> nodes = doc.Descendants("Person");
+            IEnumerable<XElement> allPesrons = doc.Descendants("Person");
 
-            nodes.Where(node =>
-            (string)node.Element("FirstName") == entity.FirstName &&
-            (string)node.Element("LastName") == entity.LastName &&
-            (string)node.Element("DateOfBirth") == entity.DateOfBirth.ToShortDateString() &&
-            (string)node.Element("Gender") == entity.Gender.ToString())
-                .Remove();
+            allPesrons.Where(node =>
+            node.Element("FirstName").Value == entity.FirstName &&
+            node.Element("LastName").Value == entity.LastName &&
+            node.Element("DateOfBirth").Value == entity.DateOfBirth.ToShortDateString() &&
+            node.Element("Gender").Value == entity.Gender.ToString()).Remove();
 
             doc.Save(_pathToXML);
         }
 
-        public void Update(Person entity)
+        public void Update(Person oldEntity, Person newEntity)
         {
-            throw new NotImplementedException();
+            XDocument doc = XDocument.Load(_pathToXML);
+            IEnumerable<XElement> allPersons = doc.Descendants("Person");
+
+            IEnumerable<XElement> persosToChange = allPersons.Where(node =>
+            node.Element("FirstName").Value == oldEntity.FirstName &&
+            node.Element("LastName").Value == oldEntity.LastName &&
+            node.Element("DateOfBirth").Value == oldEntity.DateOfBirth.ToShortDateString() &&
+            node.Element("Gender").Value == oldEntity.Gender.ToString());
+
+            foreach (XElement node in persosToChange)
+            {
+                node.Element("FirstName").Value = newEntity.FirstName;
+                node.Element("LastName").Value = newEntity.LastName;
+                node.Element("DateOfBirth").Value = newEntity.DateOfBirth.ToShortDateString();
+                node.Element("Gender").Value = newEntity.Gender.ToString();
+
+            }
+
+            doc.Save(_pathToXML);
         }
     }
 }

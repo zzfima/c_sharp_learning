@@ -4,6 +4,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Globalization;
 using System.Windows;
 
@@ -25,6 +26,13 @@ namespace PersonalManagement
             IEnumerable<Person> pustomerList = _repository.ReadAll();
             _persons = new ObservableCollection<Person>(pustomerList);
             this.dgContent.ItemsSource = _persons;
+            _persons.CollectionChanged += Changed;
+        }
+
+        private void Changed(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            //_repository.Update(this.dgContent.SelectedItem as Person, this.dgContent.SelectedItem as Person);
+
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
