@@ -34,8 +34,8 @@ namespace PersonalManagement
         {
             IServiceCollection services = new ServiceCollection();
 
-            services.AddSingleton<IRepository<Person>>(new ProductXMLRepository("PersonsData.xml"));
-            services.AddSingleton<ITextSharpExporter>(new TextSharpPDFExporter("LocalPDF.pdf"));
+            services.AddSingleton<IRepository<Person>>(new ProductXMLRepository(Properties.Settings.Default.pathToXML));
+            services.AddSingleton<ITextSharpExporter>(new TextSharpPDFExporter(Properties.Settings.Default.pathToPDF));
 
             _serviceProvider = services.BuildServiceProvider();
         }

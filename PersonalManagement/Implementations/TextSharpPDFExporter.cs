@@ -22,10 +22,10 @@ namespace Implementations
         /// <summary>
         /// Ctor
         /// </summary>
-        /// <param name="pdfDocumentPath">Path, where PDF document will be saved</param>
-        public TextSharpPDFExporter(string pdfDocumentPath)
+        /// <param name="pathToPDF">Path, where PDF document will be saved</param>
+        public TextSharpPDFExporter(string pathToPDF)
         {
-            PdfWriter writer = new PdfWriter(pdfDocumentPath);
+            PdfWriter writer = new PdfWriter(pathToPDF);
             PdfDocument pdf = new PdfDocument(writer);
             _document = new Document(pdf);
         }
