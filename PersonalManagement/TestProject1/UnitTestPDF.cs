@@ -1,4 +1,5 @@
 using Implementations;
+using Interfaces;
 using iText.Kernel.Colors;
 using iText.Layout.Properties;
 using NUnit.Framework;
@@ -25,7 +26,7 @@ namespace TestProject1
         [Test]
         public void TestAll()
         {
-            using (PDFExporter exporter = new PDFExporter(_pathSource))
+            using (ITextSharpExporter exporter = new TextSharpPDFExporter(_pathSource))
             {
                 exporter.AddHeader("Test", iText.Layout.Properties.TextAlignment.CENTER, 50.5f);
                 exporter.AddHorizontalLineSeparator();

@@ -1,4 +1,5 @@
 ﻿
+using Interfaces;
 using iText.IO.Image;
 using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
@@ -13,7 +14,7 @@ namespace Implementations
     /// <summary>
     /// Export object to PDF file.
     /// </summary>
-    public class PDFExporter : IDisposable
+    public class TextSharpPDFExporter : ITextSharpExporter
     {
         private readonly Document _document;
         private bool _disposed = false;
@@ -22,19 +23,13 @@ namespace Implementations
         /// Ctor
         /// </summary>
         /// <param name="pdfDocumentPath">Path, where PDF document will be saved</param>
-        public PDFExporter(string pdfDocumentPath)
+        public TextSharpPDFExporter(string pdfDocumentPath)
         {
             PdfWriter writer = new PdfWriter(pdfDocumentPath);
             PdfDocument pdf = new PdfDocument(writer);
             _document = new Document(pdf);
         }
 
-        /// <summary>
-        /// Add document header
-        /// </summary>
-        /// <param name="headerText"></param>
-        /// <param name="textAlignment"></param>
-        /// <param name="fontSize"></param>
         public void AddHeader(string headerText, TextAlignment textAlignment, float fontSize)
         {
             Paragraph header = new Paragraph(headerText)
@@ -58,18 +53,6 @@ namespace Implementations
             _document.Add(img);
         }
 
-        /// <summary>
-        /// Creates table on pdf document includes headers and alues
-        /// </summary>
-        /// <param name="numColumns"> the number of columns, each column will have equal percent width.</param>
-        /// <param name="largeTable">whether parts of the table will be written before all data is added. Note, 
-        /// large table does not support auto layout, table width shall not be removed.</param>
-        /// <param name="tableHeadersBackgroundColor"></param>
-        /// <param name="tableHeadersTextAlignment"></param>
-        /// <param name="tableHeadersText"></param>
-        /// <param name="tableValuesBackgroundColor"></param>
-        /// <param name="tableValuesTextAlignment"></param>
-        /// <param name="tableValuesText"></param>
         public void AddTable(
             int numColumns, bool largeTable,
             Color tableHeadersBackgroundColor, TextAlignment tableHeadersTextAlignment, string[] tableHeadersText,
@@ -98,10 +81,9 @@ namespace Implementations
             _document.Add(table);
         }
 
-
         #region Disposing
 
-        ~PDFExporter() => Dispose(false);
+        ~TextSharpPDFExporter() => Dispose(false);
 
         public void Dispose()
         {
