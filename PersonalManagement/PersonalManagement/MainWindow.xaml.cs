@@ -2,7 +2,6 @@
 using Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Models;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -15,7 +14,7 @@ namespace PersonalManagement
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<Person> _persons;
+        ObservableCollection<PersonExport> _personsObservable;
         ServiceProvider _serviceProvider;
         public MainWindow()
         {
@@ -23,10 +22,12 @@ namespace PersonalManagement
 
             Bootstrap();
 
-            IEnumerable<Person> pustomerList = _serviceProvider.GetService<IRepository<Person>>().ReadAll();
-            _persons = new ObservableCollection<Person>(pustomerList);
-            this.dgContent.ItemsSource = _persons;
-            _persons.CollectionChanged += Changed;
+            IEnumerable<Person> personsList = _serviceProvider.GetService<IRepository<Person>>().ReadAll();
+            _personsObservable = new ObservableCollection<PersonExport>();
+            foreach (Person p in personsList)
+                _personsObservable.Add(new PersonExport { Person = p, IsExport = false });
+            this.dgContent.ItemsSource = _personsObservable;
+            _personsObservable.CollectionChanged += Changed;
         }
 
         private void Bootstrap()
@@ -49,7 +50,7 @@ namespace PersonalManagement
         {
             Gender gender = (Gender)this.comboBoxGender.SelectedItem;
 
-            Person myObject = new Person()
+            Person person = new Person()
             {
                 FirstName = this.txtFirstName.Text,
                 LastName = this.txtLastName.Text,
@@ -57,13 +58,14 @@ namespace PersonalManagement
                 Gender = gender
             };
 
-            _serviceProvider.GetService<IRepository<Person>>().Add(myObject);
-            _persons.Add(myObject);
+            _serviceProvider.GetService<IRepository<Person>>().Add(person);
+            _personsObservable.Add(new PersonExport { Person = person, IsExport = false });
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            _serviceProvider.GetService<IRepository<Person>>().Remove(this.dgContent.SelectedItem as Person);
-            _persons.Remove(this.dgContent.SelectedItem as Person);
+            PersonExport personExportToDelete = this.dgContent.SelectedItem as PersonExport;
+            _serviceProvider.GetService<IRepository<Person>>().Remove(personExportToDelete.Person);
+            _personsObservable.Remove(this.dgContent.SelectedItem as PersonExport);
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)

@@ -31,10 +31,12 @@
 
         <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="dgContent">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="FirstName" Width="100" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="LastName" Width="100" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="DateOfBirth" Width="100" Binding="{Binding DateOfBirth, StringFormat=dd/MM/yyyy}"/>
-                <DataGridTextColumn Header="Gender" Width="100" Binding="{Binding Gender}"/>
+                <DataGridTextColumn Header="FirstName" Width="100" Binding="{Binding Person.FirstName}"/>
+                <DataGridTextColumn Header="LastName" Width="100" Binding="{Binding Person.LastName}"/>
+                <DataGridTextColumn Header="DateOfBirth" Width="100" Binding="{Binding Person.DateOfBirth, StringFormat=dd/MM/yyyy}"/>
+                <DataGridTextColumn Header="Gender" Width="100" Binding="{Binding Person.Gender}"/>
+                <DataGridCheckBoxColumn Header="Export" Binding="{Binding IsExport}" Width="100"/>
+                
                 <DataGridTemplateColumn Header="Edit" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
