@@ -2,12 +2,15 @@ using Implementations;
 using Models;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace TestProject1
 {
     public class Tests
     {
+        string _pathSource = "../../../../PersonalManagement/bin/Debug/net5.0-windows/PersonsData.xml";
+
         ProductXMLRepository _repository;
         Person _testPeson1;
         Person _testPeson2;
@@ -15,7 +18,9 @@ namespace TestProject1
         [SetUp]
         public void Setup()
         {
-            _repository = new ProductXMLRepository("../../../../PersonalManagement/bin/Debug/net5.0-windows/PersonsData.xml");
+            File.Copy(_pathSource, "TempPersonsData.xml");
+            _repository = new ProductXMLRepository("TempPersonsData.xml");
+
             _testPeson1 = new Person
             {
                 DateOfBirth = new System.DateTime(2000, 1, 02),
@@ -36,7 +41,7 @@ namespace TestProject1
         [TearDown]
         public void TearDown()
         {
-            //nothing to clean
+            File.Delete("TempPersonsData.xml");
         }
 
         [Test]
