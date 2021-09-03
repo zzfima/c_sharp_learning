@@ -122,7 +122,8 @@ namespace PersonalManagement
 
                 exporter.AddHorizontalLineSeparator();
             }
-        }
 
+            MessageBox.Show("Export File created", "Export", MessageBoxButton.OK);
+        }
     }
 }

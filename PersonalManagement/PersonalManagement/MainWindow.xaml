@@ -38,25 +38,25 @@
                     Orientation="Horizontal"  
                     Grid.ColumnSpan="2">
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Background="Azure" Orientation="Vertical">
                 <uc:UCPerson 
                     Margin="10" 
                     HorizontalAlignment="Left"
                     DataContext="{Binding SelectedPerson}"/>
-                <Button Content="Delete Person" Width="200" Margin="10" Click="btnDelete_Click"/>
                 <Button Content="Edit Person" Width="200"  Click="btnEdit_Click"/>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
-                <uc:UCPerson
+            <StackPanel Background="AntiqueWhite" Orientation="Vertical">
+                <uc:UCPerson  
                     Margin="10"  
                     HorizontalAlignment="Left"
                     DataContext="{Binding NewPerson}"/>
                 <Button Content="Add Person" Width="200" Click="btnAdd_Click"/>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
-                <Button Content="Export to PDF" Width="200" Margin="10" Click="btnExport_Click"/>
+            <StackPanel>
+                <Button Content="Delete Person" Background="LightSalmon" Width="200" Margin="10" Click="btnDelete_Click"/>
+                <Button Content="Export to PDF" Background="LightSeaGreen" Width="200" Margin="10" Click="btnExport_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
