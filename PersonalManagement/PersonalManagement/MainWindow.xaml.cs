@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Globalization;
 using System.Windows;
 
 namespace PersonalManagement
@@ -48,7 +47,7 @@ namespace PersonalManagement
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Gender gender = (Gender)Enum.Parse(typeof(Gender), this.txtGender.Text);
+            Gender gender = (Gender)this.comboBoxGender.SelectedItem;
 
             Person myObject = new Person()
             {
