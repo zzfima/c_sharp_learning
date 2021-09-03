@@ -4,6 +4,7 @@ using iText.Kernel.Colors;
 using Microsoft.Extensions.DependencyInjection;
 using Models;
 using PersonalManagement.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace PersonalManagement
 
             services.AddSingleton<IRepository<Person>>(new ProductXMLRepository(Properties.Settings.Default.pathToXML));
             services.AddTransient<ITextSharpExporter>(
-                x => ActivatorUtilities.CreateInstance<TextSharpPDFExporter>(x, Properties.Settings.Default.pathToPDF));
+                x => ActivatorUtilities.CreateInstance<TextSharpPDFExporter>(x, DateTime.Now.Ticks.ToString() + "_" + Properties.Settings.Default.pathToPDF));
 
             _serviceProvider = services.BuildServiceProvider();
         }
