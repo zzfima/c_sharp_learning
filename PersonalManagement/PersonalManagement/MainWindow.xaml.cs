@@ -41,12 +41,6 @@ namespace PersonalManagement
             _serviceProvider = services.BuildServiceProvider();
         }
 
-        private void Changed(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            //_repository.Update(this.dgContent.SelectedItem as Person, this.dgContent.SelectedItem as Person);
-
-        }
-
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             Person person = new Person()
