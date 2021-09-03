@@ -1,4 +1,5 @@
 ﻿
+using iText.IO.Image;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Draw;
 using iText.Layout;
@@ -47,6 +48,15 @@ namespace Implementations
             LineSeparator ls = new LineSeparator(new SolidLine());
             _document.Add(ls);
         }
+
+        public void AddImage(string imagePath)
+        {
+            Image img = new Image(ImageDataFactory
+             .Create(imagePath))
+             .SetTextAlignment(TextAlignment.CENTER);
+            _document.Add(img);
+        }
+
 
         #region Disposing
 

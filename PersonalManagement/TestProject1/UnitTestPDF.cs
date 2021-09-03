@@ -28,6 +28,7 @@ namespace TestProject1
                 exporter.AddHeader("Test", iText.Layout.Properties.TextAlignment.CENTER, 50.5f);
                 exporter.AddHorizontalLineSeparator();
                 exporter.AddHeader("Sub Test", iText.Layout.Properties.TextAlignment.LEFT, 11.5f);
+                exporter.AddImage("download.png");
             }
         }
     }
