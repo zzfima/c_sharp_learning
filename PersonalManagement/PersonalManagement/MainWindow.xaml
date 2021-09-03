@@ -30,29 +30,9 @@
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid Grid.Row="0" 
+        <uc:UCPersonsGrid Grid.Row="0" 
                   Grid.Column="0" 
-                  Grid.ColumnSpan="2" 
-                  AutoGenerateColumns="False" 
-                  CanUserAddRows="False"
-                  SelectedItem="{Binding SelectedPerson}"
-                  ItemsSource="{Binding Persons}">
-            <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Header="FirstName" Width="100" Binding="{Binding Person.FirstName}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="LastName" Width="100" Binding="{Binding Person.LastName}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="DateOfBirth" Width="100" Binding="{Binding Person.DateOfBirth, StringFormat=dd/MM/yyyy}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="Gender" Width="100" Binding="{Binding Person.Gender}"/>
-                <DataGridCheckBoxColumn IsReadOnly="False" Header="Export" Binding="{Binding IsExport}" Width="100"/>
-
-                <DataGridTemplateColumn Header="Delete" Width="100">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Delete" Click="btnDelete_Click"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+                  Grid.ColumnSpan="2"/>
 
         <StackPanel Grid.Row="1"  
                     Grid.Column="0" 
