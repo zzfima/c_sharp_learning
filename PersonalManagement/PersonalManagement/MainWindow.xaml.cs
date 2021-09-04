@@ -34,8 +34,13 @@ namespace PersonalManagement
             IServiceCollection services = new ServiceCollection();
 
             services.AddSingleton<IRepository<Person>>(new ProductXMLRepository(Properties.Settings.Default.pathToXML));
-            services.AddTransient<ITextSharpExporter>(
-                x => ActivatorUtilities.CreateInstance<TextSharpPDFExporter>(x, DateTime.Now.Ticks.ToString() + "_" + Properties.Settings.Default.pathToPDF));
+            string dirPath = @"Exports\";
+
+            if (!System.IO.Directory.Exists(dirPath))
+                System.IO.Directory.CreateDirectory(dirPath);
+
+            string pathToSave = dirPath + DateTime.Now.Ticks.ToString() + "_" + Properties.Settings.Default.pathToPDF;
+            services.AddTransient<ITextSharpExporter>(x => ActivatorUtilities.CreateInstance<TextSharpPDFExporter>(x, pathToSave));
 
             _serviceProvider = services.BuildServiceProvider();
         }
