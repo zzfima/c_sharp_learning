@@ -15,9 +15,10 @@ namespace PersonalManagement.ViewModel
 
         private ICommand _editCommand;
         private ICommand _addCommand;
-        private ICommand _deleteCommand;
 
-        public VMExport _vMExport;
+        private VMExport _vMExport;
+        private VMDelete _vMDelete;
+
 
         private ServiceProvider _serviceProvider;
 
@@ -34,12 +35,19 @@ namespace PersonalManagement.ViewModel
             NewPerson = new PersonExport { Person = new Person { DateOfBirth = System.DateTime.Today }, IsExport = false };
 
             VeiwModelExport = new VMExport(_serviceProvider, Persons);
+            VeiwModelDelete = new VMDelete(_serviceProvider, Persons, SelectedPerson);
         }
 
         public VMExport VeiwModelExport
         {
             get { return _vMExport; }
             set { _vMExport = value; }
+        }
+
+        public VMDelete VeiwModelDelete
+        {
+            get { return _vMDelete; }
+            set { _vMDelete = value; }
         }
 
         public PersonExport SelectedPerson
@@ -106,20 +114,6 @@ namespace PersonalManagement.ViewModel
             Persons.Add(new PersonExport { Person = newPerson, IsExport = false });
         }
 
-        public ICommand DeleteCommand
-        {
-            get
-            {
-                return _deleteCommand ?? (_deleteCommand = new CommandHandler(
-                    () => DeleteAction(), true));
-            }
-        }
-
-        public void DeleteAction()
-        {
-            PersonExport personExportToDelete = SelectedPerson;
-            _serviceProvider.GetService<IRepository<Person>>().Remove(personExportToDelete.Person);
-            Persons.Remove(personExportToDelete);
-        }
+        
     }
 }

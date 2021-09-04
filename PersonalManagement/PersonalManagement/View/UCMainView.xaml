@@ -52,7 +52,7 @@
             </StackPanel>
 
             <StackPanel>
-                <Button Content="Delete Person" Background="LightSalmon" Width="200" Margin="10" Command="{Binding Path=DeleteCommand}"/>
+                <uc:UCDelete DataContext="{Binding VeiwModelDelete}"/>
                 <uc:UCExport DataContext="{Binding VeiwModelExport}"/>
             </StackPanel>
         </StackPanel>
