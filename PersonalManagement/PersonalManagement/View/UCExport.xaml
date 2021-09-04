@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="PersonalManagement.View.UCExport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <StackPanel>
+        <Button Content="Export to PDF" Background="LightSeaGreen" Width="200" Margin="10" Command="{Binding Path=ExportCommand}"/>
+    </StackPanel>
+</UserControl>

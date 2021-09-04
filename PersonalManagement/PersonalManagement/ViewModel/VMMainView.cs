@@ -1,11 +1,8 @@
 ﻿using Interfaces;
-using iText.Kernel.Colors;
 using Microsoft.Extensions.DependencyInjection;
 using Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows;
 using System.Windows.Input;
 
 namespace PersonalManagement.ViewModel
@@ -19,7 +16,8 @@ namespace PersonalManagement.ViewModel
         private ICommand _editCommand;
         private ICommand _addCommand;
         private ICommand _deleteCommand;
-        private ICommand _exportCommand;
+
+        public VMExport _vMExport;
 
         private ServiceProvider _serviceProvider;
 
@@ -34,6 +32,14 @@ namespace PersonalManagement.ViewModel
 
             SelectedPerson = _personsList[0];
             NewPerson = new PersonExport { Person = new Person { DateOfBirth = System.DateTime.Today }, IsExport = false };
+
+            VeiwModelExport = new VMExport(_serviceProvider, Persons);
+        }
+
+        public VMExport VeiwModelExport
+        {
+            get { return _vMExport; }
+            set { _vMExport = value; }
         }
 
         public PersonExport SelectedPerson
@@ -114,50 +120,6 @@ namespace PersonalManagement.ViewModel
             PersonExport personExportToDelete = SelectedPerson;
             _serviceProvider.GetService<IRepository<Person>>().Remove(personExportToDelete.Person);
             Persons.Remove(personExportToDelete);
-        }
-
-        public ICommand ExportCommand
-        {
-            get
-            {
-                return _exportCommand ?? (_exportCommand = new CommandHandler(
-                    () => ExporAction(), true));
-            }
-        }
-
-        public void ExporAction()
-        {
-            using (ITextSharpExporter exporter = _serviceProvider.GetService<ITextSharpExporter>())
-            {
-                List<PersonExport> personsToExport = (from p in Persons
-                                                      where p.IsExport
-                                                      select p).ToList();
-
-                exporter.AddHeader("Persons List", iText.Layout.Properties.TextAlignment.CENTER, 80);
-                exporter.AddHorizontalLineSeparator();
-
-                string[] header = { "FirstName", "LastName", "DateOfBirth", "Gender" };
-                string[,] body = new string[personsToExport.Count, 4];
-                int rowCnt = 0;
-
-                foreach (PersonExport personExport in personsToExport)
-                {
-                    body[rowCnt, 0] = personExport.Person.FirstName;
-                    body[rowCnt, 1] = personExport.Person.LastName;
-                    body[rowCnt, 2] = personExport.Person.DateOfBirth.ToShortDateString();
-                    body[rowCnt, 3] = personExport.Person.Gender.ToString();
-
-                    rowCnt++;
-                }
-
-                exporter.AddTable(4, true,
-                    ColorConstants.LIGHT_GRAY, iText.Layout.Properties.TextAlignment.CENTER, header,
-                    ColorConstants.ORANGE, iText.Layout.Properties.TextAlignment.LEFT, body);
-
-                exporter.AddHorizontalLineSeparator();
-            }
-
-            MessageBox.Show("Export File created", "Export", MessageBoxButton.OK);
         }
     }
 }

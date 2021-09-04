@@ -53,7 +53,7 @@
 
             <StackPanel>
                 <Button Content="Delete Person" Background="LightSalmon" Width="200" Margin="10" Command="{Binding Path=DeleteCommand}"/>
-                <Button Content="Export to PDF" Background="LightSeaGreen" Width="200" Margin="10" Command="{Binding Path=ExportCommand}"/>
+                <uc:UCExport DataContext="{Binding VeiwModelExport}"/>
             </StackPanel>
         </StackPanel>
     </Grid>
