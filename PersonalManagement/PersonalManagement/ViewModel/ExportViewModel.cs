@@ -15,6 +15,7 @@ namespace PersonalManagement.ViewModel
         private ServiceProvider _serviceProvider;
         private ICommand _exportCommand;
         private ObservableCollection<PersonExport> _persons;
+        private IPDFExporter pdfExporter;
 
         public ExportViewModel(ServiceProvider serviceProvider, ObservableCollection<PersonExport> persons)
         {
