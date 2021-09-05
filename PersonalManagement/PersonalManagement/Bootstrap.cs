@@ -13,7 +13,6 @@ namespace PersonalManagement
             IServiceCollection services = new ServiceCollection();
 
             services.AddSingleton<IRepository<Person>>(new ProductXMLRepository(Properties.Settings.Default.pathToXML));
-            services.AddSingleton<IPDFExporter>(new PDFExporter());
 
             string dirPath = @"Exports\";
 

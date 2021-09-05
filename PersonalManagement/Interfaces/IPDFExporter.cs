@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace Interfaces
 {
-    public interface IPDFExporter
+    public interface IPDFExporter<T>
     {
+        void Export(ObservableCollection<T> persons);
     }
 }
