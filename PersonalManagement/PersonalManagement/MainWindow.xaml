@@ -9,6 +9,6 @@
         Title="MainWindow" Height="500" Width="800">
 
     <Grid>
-        <uc:UCMainView/>
+        <uc:MainView/>
     </Grid>
 </Window>

@@ -3,11 +3,11 @@
 namespace PersonalManagement.View
 {
     /// <summary>
-    /// Interaction logic for UCExport.xaml
+    /// Interaction logic for UCPerson.xaml
     /// </summary>
-    public partial class UCExport : UserControl
+    public partial class PersonView : UserControl
     {
-        public UCExport()
+        public PersonView()
         {
             InitializeComponent();
         }
