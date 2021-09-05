@@ -1,6 +1,7 @@
 ﻿using Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Models;
+using Prism.Commands;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -13,12 +14,7 @@ namespace PersonalManagement.ViewModel
         private PersonExport _selectedPerson;
         private PersonExport _newPerson;
 
-        private ICommand _editCommand;
-        private ICommand _addCommand;
-        private ICommand _deleteCommand;
-
         private ExportViewModel _exportViewModel;
-
         private ServiceProvider _serviceProvider;
 
         public MainViewModel(ServiceProvider serviceProvider)
@@ -34,6 +30,10 @@ namespace PersonalManagement.ViewModel
             NewPerson = new PersonExport { Person = new Person { DateOfBirth = System.DateTime.Today }, IsExport = false };
 
             VeiwModelExport = new ExportViewModel(_serviceProvider, Persons);
+
+            EditCommand = new DelegateCommand(EditAction);
+            AddCommand = new DelegateCommand(AddAction);
+            DeleteCommand = new DelegateCommand(DeleteAction);
         }
 
         public ExportViewModel VeiwModelExport
@@ -60,14 +60,9 @@ namespace PersonalManagement.ViewModel
             set { _personsList = value; }
         }
 
-        public ICommand EditCommand
-        {
-            get
-            {
-                return _editCommand ?? (_editCommand = new CommandHandler(
-                    () => EditAction(), true));
-            }
-        }
+        public DelegateCommand EditCommand { get; private set; }
+        public DelegateCommand AddCommand { get; private set; }
+        public DelegateCommand DeleteCommand { get; private set; }
 
         public void EditAction()
         {
@@ -83,15 +78,6 @@ namespace PersonalManagement.ViewModel
             Persons.Add(new PersonExport { Person = person, IsExport = false });
         }
 
-        public ICommand AddCommad
-        {
-            get
-            {
-                return _addCommand ?? (_addCommand = new CommandHandler(
-                    () => AddAction(), true));
-            }
-        }
-
         public void AddAction()
         {
             Person newPerson = new Person()
@@ -104,15 +90,6 @@ namespace PersonalManagement.ViewModel
 
             _serviceProvider.GetService<IRepository<Person>>().Add(newPerson);
             Persons.Add(new PersonExport { Person = newPerson, IsExport = false });
-        }
-
-        public ICommand DeleteCommand
-        {
-            get
-            {
-                return _deleteCommand ?? (_deleteCommand = new CommandHandler(
-                    () => DeleteAction(), true));
-            }
         }
 
         public void DeleteAction()

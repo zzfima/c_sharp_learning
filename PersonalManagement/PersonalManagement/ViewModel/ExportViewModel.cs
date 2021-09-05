@@ -2,6 +2,7 @@
 using Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Models;
+using Prism.Commands;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
@@ -11,7 +12,6 @@ namespace PersonalManagement.ViewModel
     public class ExportViewModel
     {
         private ServiceProvider _serviceProvider;
-        private ICommand _exportCommand;
         private ObservableCollection<PersonExport> _persons;
         private IPDFExporter<PersonExport> _pdfExporter;
 
@@ -20,19 +20,13 @@ namespace PersonalManagement.ViewModel
             _serviceProvider = serviceProvider;
             _persons = persons;
             _pdfExporter = new PDFExporter(_serviceProvider);
+            ExportCommand = new DelegateCommand(() =>
+            {
+                _pdfExporter.Export(_persons);
+                MessageBox.Show("Export File created", "Export", MessageBoxButton.OK);
+            });
         }
 
-        public ICommand ExportCommand
-        {
-            get
-            {
-                return _exportCommand ?? (_exportCommand = new CommandHandler(
-                    () =>
-                    {
-                        _pdfExporter.Export(_persons);
-                        MessageBox.Show("Export File created", "Export", MessageBoxButton.OK);
-                    }, true));
-            }
-        }
+        public DelegateCommand ExportCommand { get; private set; }
     }
 }

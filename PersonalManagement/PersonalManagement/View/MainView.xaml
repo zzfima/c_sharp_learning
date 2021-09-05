@@ -48,7 +48,7 @@
                     Margin="10"  
                     HorizontalAlignment="Left"
                     DataContext="{Binding NewPerson}"/>
-                <Button Content="Add Person" Width="200" Command="{Binding Path=AddCommad}"/>
+                <Button Content="Add Person" Width="200" Command="{Binding Path=AddCommand}"/>
             </StackPanel>
 
             <StackPanel>
