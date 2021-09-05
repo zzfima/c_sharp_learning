@@ -9,7 +9,7 @@ namespace PersonalManagement
     /// </summary>
     public partial class MainWindow : Window
     {
-        VMMainView _vMPerson;
+        MainViewModel _mainViewModel;
         ServiceProvider _serviceProvider;
 
         public MainWindow()
@@ -17,8 +17,8 @@ namespace PersonalManagement
             InitializeComponent();
             Bootstrap bootstrap = new Bootstrap();
             _serviceProvider = bootstrap.Build();
-            _vMPerson = new VMMainView(_serviceProvider);
-            this.DataContext = _vMPerson;
+            _mainViewModel = new MainViewModel(_serviceProvider);
+            this.DataContext = _mainViewModel;
         }
     }
 }

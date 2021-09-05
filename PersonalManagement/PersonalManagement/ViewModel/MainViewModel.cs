@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace PersonalManagement.ViewModel
 {
-    public class VMMainView
+    public class MainViewModel
     {
         private ObservableCollection<PersonExport> _personsList;
         private PersonExport _selectedPerson;
@@ -17,11 +17,11 @@ namespace PersonalManagement.ViewModel
         private ICommand _addCommand;
         private ICommand _deleteCommand;
 
-        private VMExport _vMExport;
+        private ExportViewModel _exportViewModel;
 
         private ServiceProvider _serviceProvider;
 
-        public VMMainView(ServiceProvider serviceProvider)
+        public MainViewModel(ServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
 
@@ -33,13 +33,13 @@ namespace PersonalManagement.ViewModel
             SelectedPerson = _personsList[0];
             NewPerson = new PersonExport { Person = new Person { DateOfBirth = System.DateTime.Today }, IsExport = false };
 
-            VeiwModelExport = new VMExport(_serviceProvider, Persons);
+            VeiwModelExport = new ExportViewModel(_serviceProvider, Persons);
         }
 
-        public VMExport VeiwModelExport
+        public ExportViewModel VeiwModelExport
         {
-            get { return _vMExport; }
-            set { _vMExport = value; }
+            get { return _exportViewModel; }
+            set { _exportViewModel = value; }
         }
 
         public PersonExport SelectedPerson

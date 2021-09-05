@@ -10,13 +10,13 @@ using System.Windows.Input;
 
 namespace PersonalManagement.ViewModel
 {
-    public class VMExport
+    public class ExportViewModel
     {
         private ServiceProvider _serviceProvider;
         private ICommand _exportCommand;
         private ObservableCollection<PersonExport> _persons;
 
-        public VMExport(ServiceProvider serviceProvider, ObservableCollection<PersonExport> persons)
+        public ExportViewModel(ServiceProvider serviceProvider, ObservableCollection<PersonExport> persons)
         {
             _serviceProvider = serviceProvider;
             _persons = persons;
