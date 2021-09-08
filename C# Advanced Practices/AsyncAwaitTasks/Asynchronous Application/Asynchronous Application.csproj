@@ -7,7 +7,7 @@
     <ProjectGuid>{7B52609D-CCAF-42DC-9DA4-DC052683BD91}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Asynchronous_Application</RootNamespace>
-    <AssemblyName>Asynchronous_Application</AssemblyName>
+    <AssemblyName>Asynchronous Application</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c9bc7e51-d55a-4c54-b5b1-d4639120950d}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
