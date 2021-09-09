@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 using System.Threading;
 using System.Windows;
 
@@ -23,7 +24,9 @@ namespace WpfApp1
             {
                 Dispatcher.Invoke(() =>
                 {
-                    txt.Text = binaryOp.EndInvoke(cb).ToString();
+                    //txt.Text = binaryOp.EndInvoke(cb).ToString();
+                    BinaryOp bo = (cb as AsyncResult).AsyncDelegate as BinaryOp;
+                    txt.Text = bo.EndInvoke(cb).ToString();
                 });
             }, null);
 
