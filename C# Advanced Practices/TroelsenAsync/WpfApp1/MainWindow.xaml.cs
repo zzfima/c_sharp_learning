@@ -23,18 +23,18 @@ namespace WpfApp1
             {
                 Dispatcher.Invoke(() =>
                 {
-                    txt.Text = "Finished";
+                    txt.Text = binaryOp.EndInvoke(cb).ToString();
                 });
             }, null);
+
             txt.Text = "Call calc";
-            //txt.Text = binaryOp.EndInvoke(asyncResult).ToString();
         }
 
         static int Add(int x, int y)
         {
             Console.WriteLine($"Add() invoked on thread {Thread.CurrentThread.ManagedThreadId}");
             Thread.Sleep(3000);
-            return x + y;
+            return x + y + DateTime.Now.Millisecond;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
