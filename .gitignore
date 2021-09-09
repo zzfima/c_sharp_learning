@@ -13,13 +13,22 @@
 /PersonalManagement/PersonalManagement/bin/Debug/net5.0-windows
 /PersonalManagement/.vs/PersonalManagement/v16
 /PersonalManagement/Implementations/obj
-/PersonalManagement/Implementations/bin/Debug/net5.0
+/PersonalManagement/Implementations/bin
 /PersonalManagement/Interfaces/obj
-/PersonalManagement/Interfaces/bin/Debug/net5.0
+/PersonalManagement/Interfaces/bin
 /PersonalManagement/.vs/PersonalManagement/DesignTimeBuild/.dtbcache.v2
 /PersonalManagement/Models/obj
-/PersonalManagement/Models/bin/Debug/net5.0
+/PersonalManagement/Models/bin
 /.vs
-/C# Advanced Practices
 /PersonalManagement/TestProject1/obj
-/PersonalManagement/TestProject1/bin/Debug/net5.0
+/PersonalManagement/TestProject1/bin
+/C# Advanced Practices/AsyncAwaitTasks/Asynchronous Application/bin
+/C# Advanced Practices/AsyncAwaitTasks/Asynchronous Application/obj/Debug
+/C# Advanced Practices/AsyncAwaitTasks/Common/bin/Debug
+/C# Advanced Practices/AsyncAwaitTasks/Common/obj/Debug
+/C# Advanced Practices/AsyncAwaitTasks/SynchronousApplication/bin/Debug
+/C# Advanced Practices/TroelsenAsync/.vs/TroelsenAsync/v16
+/C# Advanced Practices/TroelsenAsync/TroelsenAsync/bin/Debug
+/C# Advanced Practices/TroelsenAsync/TroelsenAsync/obj/Debug
+/C# Advanced Practices/TroelsenAsync/WpfApp1/obj/Debug
+/C# Advanced Practices/TroelsenAsync/WpfApp1/bin/Debug

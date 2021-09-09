@@ -1,0 +1,10 @@
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\bin\Debug\SynchronousApplication.exe.config
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\bin\Debug\SynchronousApplication.exe
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\bin\Debug\SynchronousApplication.pdb
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\bin\Debug\Common.dll
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\bin\Debug\Common.pdb
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\obj\Debug\SynchronousApplication.csproj.AssemblyReference.cache
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\obj\Debug\SynchronousApplication.csproj.CoreCompileInputs.cache
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\obj\Debug\SynchronousApplication.csproj.CopyComplete
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\obj\Debug\SynchronousApplication.exe
+D:\MyStuff\Projects\c_sharp_learning\C# Advanced Practices\AsyncAwaitTasks\SynchronousApplication\obj\Debug\SynchronousApplication.pdb
