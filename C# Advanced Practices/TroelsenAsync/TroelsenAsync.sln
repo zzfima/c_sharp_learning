@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TroelsenAsync", "TroelsenAsync\TroelsenAsync.csproj", "{BFCFAD8B-33ED-4499-AB94-2CC9295EC12A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFCFAD8B-33ED-4499-AB94-2CC9295EC12A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFCFAD8B-33ED-4499-AB94-2CC9295EC12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFCFAD8B-33ED-4499-AB94-2CC9295EC12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFCFAD8B-33ED-4499-AB94-2CC9295EC12A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD75A9D7-F47B-470C-8377-D0E416EB2CE9}
+	EndGlobalSection
+EndGlobal
