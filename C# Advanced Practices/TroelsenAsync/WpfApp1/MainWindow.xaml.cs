@@ -26,9 +26,9 @@ namespace WpfApp1
                 {
                     //txt.Text = binaryOp.EndInvoke(cb).ToString();
                     BinaryOp bo = (cb as AsyncResult).AsyncDelegate as BinaryOp;
-                    txt.Text = bo.EndInvoke(cb).ToString();
+                    txt.Text = bo.EndInvoke(cb).ToString() + cb.AsyncState;
                 });
-            }, null);
+            }, "Hello");
 
             txt.Text = "Call calc";
         }
@@ -42,7 +42,14 @@ namespace WpfApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            txt1.Text = DateTime.Now.Millisecond.ToString();
+            Thread thread = new Thread(() =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    txt1.Text = DateTime.Now.Millisecond.ToString();
+                });
+            });
+            thread.Start();
         }
     }
 }
