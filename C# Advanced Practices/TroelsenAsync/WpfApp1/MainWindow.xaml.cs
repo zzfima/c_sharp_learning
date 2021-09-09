@@ -18,8 +18,16 @@ namespace WpfApp1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             BinaryOp binaryOp = Add;
-            int res = binaryOp(2, 5);
-            txt.Text = res.ToString();
+
+            IAsyncResult asyncResult = binaryOp.BeginInvoke(2, 5, (cb) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    txt.Text = "Finished";
+                });
+            }, null);
+            txt.Text = "Call calc";
+            //txt.Text = binaryOp.EndInvoke(asyncResult).ToString();
         }
 
         static int Add(int x, int y)

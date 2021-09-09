@@ -7,11 +7,11 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button Click="Button_Click_1">Click tests</Button>
+            <Button Click="Button_Click_1">Click get current ms</Button>
             <TextBox x:Name="txt1"  MinWidth="100" Background="Fuchsia"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button Click="Button_Click">Click</Button>
+            <Button Click="Button_Click">Click long work...</Button>
             <TextBox x:Name="txt" MinWidth="100" Background="Aqua"></TextBox>
         </StackPanel>
     </StackPanel>
