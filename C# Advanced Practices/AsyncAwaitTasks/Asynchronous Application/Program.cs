@@ -13,11 +13,8 @@ namespace Asynchronous_Application
 
             Task<Egg> eggsTask = FryEggsAsync(2);
             Task<Bacon> baconTask = FryBaconAsync(3);
-            Task<Toast> toastTask = ToastBreadAsync(2);
+            Toast toast = await MakeToastAndJem();
 
-            Toast toast = await toastTask;
-            ApplyButter(toast);
-            ApplyJam(toast);
             Console.WriteLine("toast is ready");
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready");
@@ -28,6 +25,14 @@ namespace Asynchronous_Application
             Console.WriteLine("bacon is ready");
 
             Console.WriteLine("Breakfast is ready!");
+        }
+
+        private async static Task<Toast> MakeToastAndJem()
+        {
+            Toast toast = await ToastBreadAsync(2);
+            ApplyButter(toast);
+            ApplyJam(toast);
+            return toast;
         }
 
         private static Coffee PourCoffee()
