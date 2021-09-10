@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Persons>
+  <Person>
+    <FirstName>Moshe</FirstName>
+    <LastName>Cohen</LastName>
+    <DateOfBirth>11/4/1997</DateOfBirth>
+    <Gender>Male</Gender>
+  </Person>
+  <Person>
+    <FirstName>Avi</FirstName>
+    <LastName>Buhbut</LastName>
+    <DateOfBirth>11/5/2000</DateOfBirth>
+    <Gender>Male</Gender>
+  </Person>
+</Persons>
