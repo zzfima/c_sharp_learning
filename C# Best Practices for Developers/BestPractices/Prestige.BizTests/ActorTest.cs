@@ -11,12 +11,13 @@ namespace Prestige.BizTests
         {
             //Arrange
             Actor actor = new Actor();
+            string expected = "Actor";
 
             //Act
             string occupation = actor.GetOccupation();
 
             //Assert
-            Assert.AreEqual(occupation, "Actor");
+            Assert.AreEqual(occupation, expected);
         }
     }
 }
