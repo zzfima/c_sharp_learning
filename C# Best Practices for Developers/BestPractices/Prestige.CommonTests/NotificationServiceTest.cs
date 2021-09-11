@@ -10,7 +10,7 @@ namespace Prestige.CommonTests
         public void TestNotifyTalent()
         {
             //Arrange
-            string expected = "Talent is Moshe";
+            string expected = "Notifying talent: Moshe";
             string talentName = "Moshe";
 
             //Act
