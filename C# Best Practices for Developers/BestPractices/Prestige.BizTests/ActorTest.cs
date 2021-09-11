@@ -14,10 +14,24 @@ namespace Prestige.BizTests
             string expected = "Actor";
 
             //Act
-            string occupation = actor.GetOccupation();
+            string result = actor.GetOccupation();
 
             //Assert
-            Assert.AreEqual(occupation, expected);
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void TestJobTitle()
+        {
+            //Arrange
+            Actor actor = new Actor();
+            string job = "superman";
+
+            //Act
+            actor.JobTitle = job;
+
+            //Assert
+            Assert.AreEqual(job, actor.JobTitle);
         }
     }
 }

@@ -1,8 +1,15 @@
-﻿namespace Prestige.Biz
+﻿using System;
+
+namespace Prestige.Biz
 {
     public class Actor
     {
         private const string occupation = "Actor";
+
+        public Actor()
+        {
+            Console.WriteLine("Actor is born");
+        }
 
         /// <summary>
         /// Will return title
