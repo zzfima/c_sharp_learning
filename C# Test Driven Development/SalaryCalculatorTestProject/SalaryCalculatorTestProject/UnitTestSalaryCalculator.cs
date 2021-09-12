@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Calculator;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SalaryCalculatorTestProject
 {
@@ -17,7 +18,7 @@ namespace SalaryCalculatorTestProject
             float actualPerHourSalary = salaryCalculator.GetPerHourSalary(annualSalary);
 
             //Assert
-            Assert.AreEqual(expectedPerHourSalary, actualPerHourSalary);
+            Assert.AreEqual(expectedPerHourSalary, actualPerHourSalary, 0.1);
         }
 
         [TestMethod]
@@ -32,7 +33,7 @@ namespace SalaryCalculatorTestProject
             float actualAnnualSalary = salaryCalculator.GetAnnualSalary(perHourSalary);
 
             //Assert
-            Assert.AreEqual(expectedAnnualSalary, actualAnnualSalary);
+            Assert.AreEqual(expectedAnnualSalary, actualAnnualSalary, 0.1);
         }
     }
 }
