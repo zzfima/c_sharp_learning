@@ -56,8 +56,8 @@ namespace SalaryCalculatorTestProject
         {
             //Arrange
             SalaryCalculator salaryCalculator = new SalaryCalculator();
-            float expectedAnnualSalary = 199992f;
-            float perHourSalary = 96.15f;
+            float expectedAnnualSalary = 52000f;
+            float perHourSalary = 25f;
 
             //Act
             float actualAnnualSalary = salaryCalculator.GetAnnualSalary(perHourSalary);

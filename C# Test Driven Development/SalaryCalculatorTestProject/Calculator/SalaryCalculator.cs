@@ -4,14 +4,8 @@
     {
         private const int HoursInYear = 2080;
 
-        public float GetPerHourSalary(float annualSalary)
-        {
-            return annualSalary / HoursInYear;
-        }
+        public float GetPerHourSalary(float annualSalary) => annualSalary / HoursInYear;
+        public float GetAnnualSalary(float perHourSalary) => perHourSalary * HoursInYear;
 
-        public float GetAnnualSalary(float perHourSalary)
-        {
-            return perHourSalary * HoursInYear;
-        }
     }
 }
