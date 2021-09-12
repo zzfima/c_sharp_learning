@@ -2,14 +2,16 @@
 {
     public class SalaryCalculator
     {
+        private const int HoursInYear = 2080;
+
         public float GetPerHourSalary(float annualSalary)
         {
-            return 48.08f;
+            return annualSalary / HoursInYear;
         }
 
         public float GetAnnualSalary(float perHourSalary)
         {
-            return 100006.4f;
+            return perHourSalary * HoursInYear;
         }
     }
 }
