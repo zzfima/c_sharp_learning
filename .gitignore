@@ -9,6 +9,5 @@
 *.suo
 bin/
 obj/
-Debug/
-Release/
 packages/
+.vs/
