@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Polymorphism;
-using System;
 
 namespace PolymorphismTestProject
 {
