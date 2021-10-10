@@ -8,7 +8,7 @@ namespace UnitTestChessGame
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethodInit()
+        public void TestKingStartPosition()
         {
             ChessGame chessGame = new ChessGame();
             Square<IEnumerable> squares = chessGame.GetCurrentSquare(ChessFigures.King, FigureColor.White);
