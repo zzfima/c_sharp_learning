@@ -546,12 +546,6 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PhotoSharingApp.Portable\PhotoSharingApp.Portable.csproj">
-      <Project>{f2be2125-5344-4f5c-bf06-87e0455c5af9}</Project>
-      <Name>PhotoSharingApp.Portable</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Mobile.Client">
       <Version>4.2.0</Version>
     </PackageReference>
