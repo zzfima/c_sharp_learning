@@ -1,0 +1,116 @@
+﻿<Window x:Class="WpfExample.MainWindow"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:local="clr-namespace:WpfExample"
+				mc:Ignorable="d"
+				Title="MainWindow"
+				Height="700"
+				Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height='20' />
+			<RowDefinition Height='90*' />
+			<RowDefinition Height='80' />
+		</Grid.RowDefinitions>
+		<Menu Grid.Row='0'>
+			<MenuItem Header='File'>
+				<MenuItem Header='Open' />
+				<MenuItem Header='Exit' />
+			</MenuItem>
+			<MenuItem Header='Edit'>
+				<MenuItem Header='Cut' />
+				<MenuItem Header='Copy' />
+				<MenuItem Header='Paste' />
+
+			</MenuItem>
+			<MenuItem Header='Other'>
+				<MenuItem Header='About' />
+				<MenuItem Header='Animated'
+									x:Name='AnimatedMenu'
+									Click='AnimatedMenu_Click' />
+			</MenuItem>
+
+		</Menu>
+		<Grid TextElement.FontSize='18'
+					Grid.Row='1'>
+
+			<ListBox x:Name='ListBox1'
+							 ItemsSource='{Binding}'
+							 Margin='0,0,0,40'>
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text='{Binding Name}' />
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+
+			</ListBox>
+			<ListBox x:Name='ListBox2'
+							 Visibility='Collapsed'
+							 Margin='0,0,0,40' 
+							 ItemsSource='{Binding}'>
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel MaxWidth='500'>
+							<TextBlock Text='{Binding Name}' FontSize='34' Foreground='RoyalBlue' HorizontalAlignment='Center'/>
+							<StackPanel Orientation='Horizontal' HorizontalAlignment='Center'>
+								<Image Source='OrnateLine.jpg' />
+							</StackPanel>
+							<TextBlock Text='{Binding Description}'
+												 FontSize='14'
+												 Foreground='Black' Margin='30,6' TextWrapping='Wrap'
+												 HorizontalAlignment='Center' />
+						</StackPanel>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<ListBox x:Name='ListBox3'
+							 Visibility='Collapsed'
+							 Margin='0,0,0,40'>
+				<ListBoxItem>
+					<StackPanel Orientation='Horizontal'>
+						<MediaElement Width='300'
+													MediaEnded='MediaElement1_MediaEnded'
+													Source='Videos/KickSlow.mov'
+													x:Name='Media1'
+													Loaded='Media1_Loaded'
+													LoadedBehavior='Manual' />
+						<TextBlock Text='Kick in Slow Motion'
+											 VerticalAlignment='Center'
+											 Margin='20' />
+					</StackPanel>
+				</ListBoxItem>
+				<ListBoxItem>
+					<StackPanel Orientation='Horizontal'>
+						<MediaElement Width='300'
+													MediaEnded='MediaElement2_MediaEnded'
+													Source='Videos/Turbines.mov'
+													x:Name='Media2'
+													LoadedBehavior='Manual'
+													Loaded='Media2_Loaded' />
+						<TextBlock Text='Turbines'
+											 VerticalAlignment='Center'
+											 Margin='20' />
+					</StackPanel>
+				</ListBoxItem>
+			</ListBox>
+
+		</Grid>
+		<StackPanel Grid.Row='2'
+								Orientation='Horizontal'
+								HorizontalAlignment='Center'
+								VerticalAlignment='Center'>
+			<Button Content='Button1'
+							x:Name='Button1'
+							Click='Button1_Click'
+							Margin='10,0'
+							Padding='10' />
+			<Button Content='Button2'
+							x:Name='Button2'
+							Click='Button2_Click'
+							Margin='10,0'
+							Padding='10' />
+		</StackPanel>
+	</Grid>
+</Window>
