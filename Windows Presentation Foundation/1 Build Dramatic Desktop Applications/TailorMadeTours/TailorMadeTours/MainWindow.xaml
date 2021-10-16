@@ -62,7 +62,12 @@
             <TabItem Header="Weekly Calendar">
                 <Grid Background="Orange">
                     <ListBox ItemsSource="{Binding}"
-                             ItemTemplate="{StaticResource MyItemsTemplate}" />
+                             ItemTemplate="{
+                        StaticResource MyItemsTemplate}" />
+                    <Grid.Resources>
+                        <Style TargetType="Label"
+                               BasedOn="{StaticResource MyGridStyle}" />
+                    </Grid.Resources>
                 </Grid>
             </TabItem>
         </TabControl>

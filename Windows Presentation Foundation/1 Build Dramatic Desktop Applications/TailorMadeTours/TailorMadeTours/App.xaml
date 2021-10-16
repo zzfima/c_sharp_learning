@@ -9,5 +9,14 @@
                 <Label Content="{Binding Age}" />
             </StackPanel>
         </DataTemplate>
+        <Style x:Key="MyGridStyle" TargetType="Label">
+            <Setter Property="Background"
+                    Value="Beige" />
+        </Style>
+        <Style 
+               TargetType="Label">
+            <Setter Property="Foreground"
+                    Value="Red" />
+        </Style>
     </Application.Resources>
 </Application>
