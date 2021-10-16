@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Models\TourSource.cs" />
     <Compile Include="Models\TourStop.cs" />
+    <Compile Include="MyEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
