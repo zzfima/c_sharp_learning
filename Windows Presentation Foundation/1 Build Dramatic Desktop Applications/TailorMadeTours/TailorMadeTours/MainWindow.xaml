@@ -10,18 +10,45 @@
         Title="MainWindow">
     <StackPanel>
         <Label Content="Tailor made tours"
-               FontWeight="Bold" FontSize="22"
+               FontWeight="Bold"
+               FontSize="22"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                Margin="10" />
         <TabControl MinHeight="300">
-            <TabItem Header="TabItem1">
+            <TabItem Header="Tour stops">
                 <Grid Background="Orange" />
             </TabItem>
-            <TabItem Header="TabItem2">
-                <Grid Background="#FF6996AD" />
+            <TabItem Header="Details">
+                <StackPanel>
+                    <Grid Height="250"
+                          Margin="0, 6, 0, 0 ">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="60" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0"
+                               Source="Images/Stops/Pastry.jpg"
+                               Stretch="UniformToFill"
+                               Grid.RowSpan="2" />
+                        <Rectangle Grid.Row="1"
+                                   Fill="#7F01FFFF"></Rectangle>
+                        <Image Stretch="UniformToFill"
+                               Width="50"
+                               Height="50"
+                               Grid.Row="1"
+                               HorizontalAlignment="Right"
+                               Source="Images/MapPin.png" />
+                        <Label Content="Paddingtone's Pastries"
+                               Grid.Row="1"
+                               HorizontalAlignment="Left"
+                               FontSize="28"
+                               FontWeight="Bold"
+                               Foreground="White" />
+                    </Grid>
+                </StackPanel>
             </TabItem>
-            <TabItem Header="TabItem3">
+            <TabItem Header="Weekly Calendar">
                 <Grid Background="Orange" />
             </TabItem>
         </TabControl>
