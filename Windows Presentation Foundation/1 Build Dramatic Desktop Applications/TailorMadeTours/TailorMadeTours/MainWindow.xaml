@@ -17,7 +17,17 @@
                Margin="10" />
         <TabControl MinHeight="300">
             <TabItem Header="Tour stops">
-                <Grid Background="Orange" />
+                <StackPanel Background="Orange">
+                    <TextBox x:Name="MyTxt1"
+                             Background="AliceBlue"
+                             Margin="4" />
+                    <Label Background="Azure"
+                           Margin="4"
+                           Content="{
+                                Binding ElementName=MyTxt1, 
+                                Path=Text, 
+                                Mode=OneWay}" />
+                </StackPanel>
             </TabItem>
             <TabItem Header="Details">
                 <StackPanel>
