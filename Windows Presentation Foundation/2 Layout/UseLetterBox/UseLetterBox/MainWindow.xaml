@@ -2,29 +2,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:useletterbox="clr-namespace:UseLetterBox"
         xmlns:WpfControlLibrary1="clr-namespace:WpfControlLibrary1;assembly=WpfControlLibrary1"
         x:Class="UseLetterBox.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450">
+        Height="400" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <WpfControlLibrary1:UserControl1 Grid.Column="1"
+        <!--<WpfControlLibrary1:UserControl1 Grid.Column="1"
                                          Grid.Row="0" />
         <WpfControlLibrary1:UserControl1 Grid.Column="1"
                                          Grid.Row="1" />
         <GridSplitter Grid.Column="1"
                       Grid.RowSpan="2"
-                      ShowsPreview="True"
-                      Width="12" />
+                      ShowsPreview="True" Width="12" />-->
+
+        <useletterbox:CustomPanel Grid.Row="0" Grid.Column="0">
+            <Label>Hello</Label>
+            <Label>All</Label>
+            <Label>People</Label>
+        </useletterbox:CustomPanel>
     </Grid>
 </Window>
