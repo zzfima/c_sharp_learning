@@ -55,16 +55,16 @@ namespace SerializeDeserialize
             MyEvent += () =>
             {
                 Console.WriteLine("1");
-                int cti2 = Thread.CurrentThread.ManagedThreadId;
+                Console.WriteLine($"Thread id {Thread.CurrentThread.ManagedThreadId} in Event Handler");
                 return 567;
             };
-            //MyEvent += () => Console.WriteLine("2");
-            //MyEvent += () => Console.WriteLine("3");
-            int cti3 = Thread.CurrentThread.ManagedThreadId;
+
+            Console.WriteLine($"Thread id {Thread.CurrentThread.ManagedThreadId} in main");
+
             IAsyncResult result = MyEvent.BeginInvoke((r) =>
             {
                 var v = r.AsyncState;
-                int cti1 = Thread.CurrentThread.ManagedThreadId;
+                Console.WriteLine($"Thread id {Thread.CurrentThread.ManagedThreadId} in BeginInvoke");
             }, "FFFF"
             );
 
