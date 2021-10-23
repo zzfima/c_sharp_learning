@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
+using System.Threading;
 using System.Xml.Serialization;
 
 namespace SerializeDeserialize
 {
     internal class Program
     {
+        delegate int MyDelegate();
+        static event MyDelegate MyEvent;
+
         static void Main(string[] args)
         {
             DisposableObject disposableObject = new DisposableObject("manka.txt");
 
             using (DisposableObject disposableObject2 = new DisposableObject("manka3.txt"))
             {
-                String s = disposableObject2.ToString();   
+                String s = disposableObject2.ToString();
             }
 
             Person person = new Person();
@@ -34,6 +38,38 @@ namespace SerializeDeserialize
             IList array = new ArrayList();
             array.Add(person);
 
+            int? i = null;
+
+            Console.WriteLine(i ?? 5);
+
+            if (i == null)
+                Console.WriteLine(5);
+            else
+                Console.WriteLine(i);
+
+            object o = i == null ? 5 : i;
+            Console.WriteLine(o);
+            o = i?.ToString();
+            Console.WriteLine(o);
+
+            MyEvent += () =>
+            {
+                Console.WriteLine("1");
+                int cti2 = Thread.CurrentThread.ManagedThreadId;
+                return 567;
+            };
+            //MyEvent += () => Console.WriteLine("2");
+            //MyEvent += () => Console.WriteLine("3");
+            int cti3 = Thread.CurrentThread.ManagedThreadId;
+            IAsyncResult result = MyEvent.BeginInvoke((r) =>
+            {
+                var v = r.AsyncState;
+                int cti1 = Thread.CurrentThread.ManagedThreadId;
+            }, "FFFF"
+            );
+
+            int endInvokeRes = MyEvent.EndInvoke(result);
+            Console.WriteLine(endInvokeRes);
         }
     }
 
