@@ -22,18 +22,26 @@ namespace AsyncAwaitUI
         private async void Button_Click1(object sender, RoutedEventArgs e)
         {
             Console.WriteLine($"1. Thread id {Thread.CurrentThread.ManagedThreadId}");
-
-            await Task.Run(() =>
+            try
             {
-                Console.WriteLine($"2. Thread id {Thread.CurrentThread.ManagedThreadId}");
-                Thread.Sleep(5000);
-                vM.Counter = 0;
-            });
+                await Task.Run(() =>
+                {
+                    Console.WriteLine($"2. Thread id {Thread.CurrentThread.ManagedThreadId}");
+                    Thread.Sleep(1000);
+                    vM.Counter = 0;
+
+                    throw new Exception("GFD");
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             Console.WriteLine($"3. Thread id {Thread.CurrentThread.ManagedThreadId}");
         }
 
-        private void Button_Click2(object sender, RoutedEventArgs e)
+        private void Button_Click2Async(object sender, RoutedEventArgs e)
         {
             NewMethod();
         }
