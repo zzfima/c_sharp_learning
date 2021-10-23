@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -20,11 +21,16 @@ namespace AsyncAwaitUI
 
         private async void Button_Click1(object sender, RoutedEventArgs e)
         {
+            Console.WriteLine($"1. Thread id {Thread.CurrentThread.ManagedThreadId}");
+
             await Task.Run(() =>
             {
-                Thread.Sleep(2000);
+                Console.WriteLine($"2. Thread id {Thread.CurrentThread.ManagedThreadId}");
+                Thread.Sleep(5000);
                 vM.Counter = 0;
             });
+
+            Console.WriteLine($"3. Thread id {Thread.CurrentThread.ManagedThreadId}");
         }
 
         private void Button_Click2(object sender, RoutedEventArgs e)
