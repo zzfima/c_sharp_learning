@@ -8,12 +8,14 @@ namespace UnitTestProject1
     {
         Duck _mallardDuck;
         Duck _redHeadDuck;
+        Duck _rubberDuck;
 
         [TestInitialize]
         public void Init()
         {
             _mallardDuck = new MallardDuck();
             _redHeadDuck = new RedHeadDuck();
+            _rubberDuck = new RubberDuck();
         }
 
         [TestCleanup]
@@ -27,6 +29,12 @@ namespace UnitTestProject1
         public void TestMethod1()
         {
             Assert.AreEqual(_mallardDuck.Dislay(), "I am Mallard Duck");
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Assert.AreEqual(_rubberDuck.Swim(), "Can not swim");
         }
     }
 }

@@ -13,12 +13,12 @@ namespace Logic
 
         public virtual string Quack()
         {
-            return "Quack";
+            return "Can Quack";
         }
 
         public virtual string Swim()
         {
-            return "Swim";
+            return "Can Swim";
         }
 
         public abstract string Dislay();

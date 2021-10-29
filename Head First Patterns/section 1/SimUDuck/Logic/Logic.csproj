@@ -45,6 +45,7 @@
     <Compile Include="MallardDuck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedHeadDuck.cs" />
+    <Compile Include="RubberDuck.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
