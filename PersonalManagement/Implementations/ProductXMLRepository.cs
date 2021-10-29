@@ -8,7 +8,7 @@ using System.Xml.Linq;
 namespace Implementations
 {
     /// <summary>
-    /// Person object persistance by XML file
+    /// Person object persistence by XML file
     /// </summary>
     public class ProductXMLRepository : IRepository<Person>
     {
