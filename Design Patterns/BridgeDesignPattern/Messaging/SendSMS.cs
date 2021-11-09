@@ -1,8 +1,8 @@
 ﻿namespace Messaging.Core
 {
-    public class SendSMS : ISendUsingWebService
+    public class SendSMS : SendUsingWebService
     {
-        public string Send(string senderMedium)
+        public override string Send(string senderMedium)
         {
             return "SMS sent using " + senderMedium;
         }

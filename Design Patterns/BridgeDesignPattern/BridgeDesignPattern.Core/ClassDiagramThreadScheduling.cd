@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ThreadScheduling.Core.Unix.UnixPTS" Collapsed="true">
+    <Position X="3.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Unix\UnixPTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.Unix.UnixTSTS" Collapsed="true">
+    <Position X="9.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Unix\UnixTSTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.Windows.WindowsPTS" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\WindowsPTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.Windows.WindowsTSTS" Collapsed="true">
+    <Position X="8.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\WindowsTSTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.JVM.JVMPTS" Collapsed="true">
+    <Position X="5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>JVM\JVMPTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.JVM.JVMTSTS" Collapsed="true">
+    <Position X="10.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>JVM\JVMTSTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.PreemtiveThreadScheduler" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PreemtiveThreadScheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.ThreadScheduler" Collapsed="true">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThreadScheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadScheduling.Core.TimeSlicedThreadScheduler" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeSlicedThreadScheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
