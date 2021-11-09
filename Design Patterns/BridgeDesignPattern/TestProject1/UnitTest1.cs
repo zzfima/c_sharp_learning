@@ -1,9 +1,9 @@
-using BridgeDesignPattern.Core;
-using BridgeDesignPattern.Core.JVM;
-using BridgeDesignPattern.Core.Unix;
-using BridgeDesignPattern.Core.Windows;
 using NUnit.Framework;
 using System;
+using ThreadScheduling.Core;
+using ThreadScheduling.Core.JVM;
+using ThreadScheduling.Core.Unix;
+using ThreadScheduling.Core.Windows;
 
 namespace TestProject1
 {

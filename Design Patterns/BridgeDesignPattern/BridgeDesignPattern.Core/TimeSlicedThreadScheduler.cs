@@ -1,4 +1,4 @@
-﻿namespace BridgeDesignPattern.Core
+﻿namespace ThreadScheduling.Core
 {
     public abstract class TimeSlicedThreadScheduler : ThreadScheduler
     {

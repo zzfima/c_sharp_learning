@@ -1,4 +1,4 @@
-﻿namespace BridgeDesignPattern.Core.JVM
+﻿namespace ThreadScheduling.Core.JVM
 {
     public class JVMTSTS : TimeSlicedThreadScheduler
     {

@@ -1,4 +1,4 @@
-﻿namespace BridgeDesignPattern.Core.Windows
+﻿namespace ThreadScheduling.Core.Windows
 {
     public class WindowsPTS : PreemtiveThreadScheduler
     {

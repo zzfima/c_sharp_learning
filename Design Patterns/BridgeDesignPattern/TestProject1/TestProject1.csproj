@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BridgeDesignPattern.Core\BridgeDesignPattern.Core.csproj" />
+    <ProjectReference Include="..\BridgeDesignPattern.Core\ThreadScheduling.Core.csproj" />
   </ItemGroup>
 
 </Project>

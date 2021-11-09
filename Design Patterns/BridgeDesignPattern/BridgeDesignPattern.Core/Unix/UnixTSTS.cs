@@ -1,4 +1,4 @@
-﻿namespace BridgeDesignPattern.Core.Unix
+﻿namespace ThreadScheduling.Core.Unix
 {
     public class UnixTSTS : TimeSlicedThreadScheduler
     {
