@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BridgeDesignPattern.Core\ThreadScheduling.Core.csproj" />
+    <ProjectReference Include="..\Messaging\Messaging.Core.csproj" />
   </ItemGroup>
 
 </Project>

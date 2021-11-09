@@ -7,7 +7,7 @@ using ThreadScheduling.Core.Windows;
 
 namespace TestProject1
 {
-    public class Tests
+    public class UnitTestThreadSchedule
     {
         [Test]
         public void TestThreadSchedulingWayName()
