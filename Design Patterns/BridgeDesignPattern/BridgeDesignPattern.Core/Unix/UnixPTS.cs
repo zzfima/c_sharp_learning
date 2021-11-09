@@ -1,15 +1,15 @@
-﻿namespace BridgeDesignPattern.Core
+﻿namespace BridgeDesignPattern.Core.Unix
 {
-    public class WindowsPTS : PreemtiveThreadScheduler
+    public class UnixPTS : PreemtiveThreadScheduler
     {
         public override int GetPreemtiveThreadsAmount()
         {
-            return 4;
+            return 3;
         }
 
         public override string ThreadSchedulingWayName()
         {
-            return "WindowsPTS";
+            return "UnixPTS";
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace BridgeDesignPattern.Core
+﻿namespace BridgeDesignPattern.Core.Windows
 {
     public class WindowsTSTS : TimeSlicedThreadScheduler
     {
