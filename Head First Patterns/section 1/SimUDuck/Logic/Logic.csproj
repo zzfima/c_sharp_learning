@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Duck.cs" />
+    <Compile Include="BaseFeathersDecorator.cs" />
     <Compile Include="MallardDuck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GreenFeathersDecorator.cs" />
+    <Compile Include="RedFeathersDecorator.cs" />
     <Compile Include="RedHeadDuck.cs" />
     <Compile Include="RubberDuck.cs" />
   </ItemGroup>

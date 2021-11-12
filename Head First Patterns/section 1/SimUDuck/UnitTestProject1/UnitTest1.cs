@@ -36,5 +36,16 @@ namespace UnitTestProject1
         {
             Assert.AreEqual(_rubberDuck.Swim(), "Can not swim");
         }
+
+        [TestMethod]
+        public void TestMethod3()
+        {
+            FeathersDecorator decorator = new FeathersDecorator(_mallardDuck);
+            decorator = new RedFeathersDecorator(decorator);
+            decorator = new GreenFeathersDecorator(decorator);
+            decorator = new RedFeathersDecorator(decorator);
+            Assert.AreEqual(decorator.DisplayFeathers(),
+                "I am Mallard Duck, red feathers, green feathers, red feathers");
+        }
     }
 }
