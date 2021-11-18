@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagePrintServicePackage", "MessagePrintServicePackage\MessagePrintServicePackage.csproj", "{127199B1-AAC9-4F4A-A251-E2FBF0E66E5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLoggerService", "ConsoleLoggerService\ConsoleLoggerService.csproj", "{0F29E20B-B864-4AA0-9263-BE26174A09B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{127199B1-AAC9-4F4A-A251-E2FBF0E66E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{127199B1-AAC9-4F4A-A251-E2FBF0E66E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{127199B1-AAC9-4F4A-A251-E2FBF0E66E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{127199B1-AAC9-4F4A-A251-E2FBF0E66E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F29E20B-B864-4AA0-9263-BE26174A09B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F29E20B-B864-4AA0-9263-BE26174A09B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F29E20B-B864-4AA0-9263-BE26174A09B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F29E20B-B864-4AA0-9263-BE26174A09B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B438E9CB-CFD0-454E-A64C-6261908DD3DA}
+		SolutionGuid = {A34AD1C0-BCB8-474B-B4DD-A123FEF226A4}
 	EndGlobalSection
 EndGlobal
