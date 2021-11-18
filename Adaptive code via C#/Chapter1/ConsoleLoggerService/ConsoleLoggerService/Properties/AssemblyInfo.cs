@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ConsoleLoggerService")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Console Logger Service")]
+[assembly: AssemblyDescription("Console Logger Service")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("SwimCold")]
 [assembly: AssemblyProduct("ConsoleLoggerService")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]

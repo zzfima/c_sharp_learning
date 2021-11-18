@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+ <metadata>
+    <id>$id$</id>
+    <version>1.0.0</version>
+    <title>Console Logger Service</title>
+    <authors>Efim Z</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>Nuget Logger</description>
+    <releaseNotes>Just first Nuget Package.</releaseNotes>
+    <copyright>no copyright</copyright>
+	<dependencies>
+      <group targetFramework=".NETFramework4.7.2" />
+    </dependencies>
+  </metadata>
+</package>
