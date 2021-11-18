@@ -1,6 +1,6 @@
-﻿using MessagePrinter;
+﻿using ConsoleLoggerService;
+using MessagePrinter;
 using System;
-using System.Collections.Generic;
 
 namespace SimpleDependency
 {
@@ -10,30 +10,10 @@ namespace SimpleDependency
         {
             var s = new MessagePrintingService();
             s.PrintMessage();
+
+            ConsoleLogger consoleLogger = new ConsoleLogger();
+            consoleLogger.Log("Xopa");
             Console.ReadLine();
-
-            //descending sorted list by EventTableSortOrder value
-            List<EventGuiData> sortedList = m_EventsList.OrderByDescending(e => e.EventTableSortOrder).ToList();
-
-            //loop on sorted list
-            for (int i = 0; i < sortedList.Count;)
-            {
-                // if same place as in source (sorting do not change the place)
-                if (m_EventsList[i] != sortedList[i])
-                {
-                    //swap, stay on same index
-                    EventGuiData item = m_EventsList[i];
-                    //remove it form source
-                    m_EventsList.RemoveAt(i);
-                    //insert in same place
-                    m_EventsList.Insert(sortedList.IndexOf(item), item);
-                }
-                else
-                {
-                    //continue
-                    i++;
-                }
-            }
         }
     }
 }
