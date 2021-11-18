@@ -6,7 +6,7 @@ namespace MessagePrinter
     {
         public void PrintMessage()
         {
-            Console.WriteLine("Hello from MessagePrintingService");
+            Console.WriteLine("Hello from MessagePrintingService!");
         }
     }
 }
