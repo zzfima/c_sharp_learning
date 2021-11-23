@@ -6,10 +6,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Sync" HorizontalAlignment="Left" Margin="222,38,0,0" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick_Sync"/>
-        <Button Content="Async" HorizontalAlignment="Left" Margin="334,38,0,0" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick_Async"/>
-        <Button Content="Parallel" HorizontalAlignment="Left" Height="20" Margin="429,38,0,0" VerticalAlignment="Top" Width="79" Click="ButtonBase_OnClick_Parallel"/>
-        <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Height="19" Margin="87,77,0,0" VerticalAlignment="Top" Width="638"/>
-        <TextBlock x:Name="ResultsWindow" HorizontalAlignment="Left" Height="192" Margin="87,111,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="542"/>
+        <Button Content="Sync" HorizontalAlignment="Left" Margin="223,23,0,0" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick_Sync"/>
+        <Button Content="Async" HorizontalAlignment="Left" Margin="335,23,0,0" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick_Async"/>
+        <Button Content="Parallel" HorizontalAlignment="Left" Height="20" Margin="430,23,0,0" VerticalAlignment="Top" Width="79" Click="ButtonBase_OnClick_Parallel"/>
+        <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Height="19" Margin="87,100,0,0" VerticalAlignment="Top" Width="638"/>
+        <TextBlock x:Name="ResultsWindow" HorizontalAlignment="Left" Height="160" Margin="87,143,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="542"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Background="Red" Margin="593,23,0,0" VerticalAlignment="Top" Width="75" Click="ButtonBase_OnClick_Cancel"/>
     </Grid>
 </Window>
