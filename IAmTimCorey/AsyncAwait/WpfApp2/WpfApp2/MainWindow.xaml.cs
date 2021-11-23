@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfApp2
 {
@@ -23,6 +13,36 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
+            ResultsWindow.Text = String.Empty;
+        }
+
+        private void ButtonBase_OnClick_Sync(object sender, RoutedEventArgs e)
+        {
+            ResultsWindow.Text = String.Empty;
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            for (int i = 0; i < 5; i++)
+            {
+                LongWork();
+            }
+            stopwatch.Stop();
+            long elapsedMs = stopwatch.ElapsedMilliseconds;
+            ResultsWindow.Text += $"Total execution time: { elapsedMs }";
+        }
+
+        private void ButtonBase_OnClick_Async(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonBase_OnClick_Parallel(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LongWork()
+        {
+            Thread.Sleep(1000);
+            ResultsWindow.Text += "working... \n";
         }
     }
 }
