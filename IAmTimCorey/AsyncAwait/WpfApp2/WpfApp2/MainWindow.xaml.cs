@@ -23,6 +23,7 @@ namespace WpfApp2
             for (int i = 0; i < 5; i++)
             {
                 LongWork();
+                ProgressBar.Value = i * 25;
             }
             stopwatch.Stop();
             long elapsedMs = stopwatch.ElapsedMilliseconds;
