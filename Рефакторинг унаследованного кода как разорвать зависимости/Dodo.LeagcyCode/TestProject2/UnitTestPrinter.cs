@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace TestProject2
 {
-    public class Tests2
+    public class UnitTestPrinter
     {
         [SetUp]
         public void Setup()

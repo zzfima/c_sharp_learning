@@ -1,22 +1,22 @@
 ﻿namespace Decorator.Pizza
 {
-    public class Pizza
+    public class Pizza : ICostable
     {
         public virtual int Cost() => 50;
     }
 
-    public class ExtraCheesePizza : Pizza
+    public class ExtraCheesePizza : ICostable
     {
-        private readonly Pizza _pizza;
+        private readonly ICostable _costable;
 
-        public ExtraCheesePizza(Pizza pizza)
+        public ExtraCheesePizza(ICostable costable)
         {
-            _pizza = pizza;
+            _costable = costable;
         }
 
-        public override int Cost()
+        public int Cost()
         {
-            return _pizza.Cost() + 10;
+            return _costable.Cost() + 10;
         }
     }
 }

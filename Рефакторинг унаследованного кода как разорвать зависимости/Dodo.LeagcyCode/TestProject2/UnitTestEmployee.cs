@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace TestProject2
 {
-    public class Tests1
+    public class UnitTestEmployee
     {
         [SetUp]
         public void Setup()

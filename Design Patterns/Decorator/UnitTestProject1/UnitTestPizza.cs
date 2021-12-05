@@ -16,7 +16,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethodExtraCheesePizza()
         {
-            Pizza pizza = new Pizza();
+            ICostable pizza = new Pizza();
             pizza = new ExtraCheesePizza(pizza);
             Assert.AreEqual(pizza.Cost(), 60);
         }
@@ -24,7 +24,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethodExtraExtraExtraCheesePizza()
         {
-            Pizza pizza = new Pizza();
+            ICostable pizza = new Pizza();
             pizza = new ExtraCheesePizza(pizza);
             pizza = new ExtraCheesePizza(pizza);
             pizza = new ExtraCheesePizza(pizza);
