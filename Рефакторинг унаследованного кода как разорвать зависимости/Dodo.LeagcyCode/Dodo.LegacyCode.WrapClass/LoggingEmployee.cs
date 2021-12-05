@@ -17,6 +17,7 @@ namespace Dodo.LegacyCode.WrapClass
             _employee.Pay(timeEntries, paymentService);
 
             LogPayment();
+            Console.WriteLine("LoggingEmployee Pay");
         }
 
         private void LogPayment()

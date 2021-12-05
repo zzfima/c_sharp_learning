@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Dodo.LegacyCode.WrapClass
 {
@@ -11,7 +12,7 @@ namespace Dodo.LegacyCode.WrapClass
             _hourlyPayRateUsd = 35;
         }
 
-        public void Pay(List<TimeEntry> timeEntries, PaymentService paymentService)
+        public virtual void Pay(List<TimeEntry> timeEntries, PaymentService paymentService)
         {
             var totalAmount = new Money();
             foreach (var entry in timeEntries)
@@ -21,6 +22,7 @@ namespace Dodo.LegacyCode.WrapClass
             }
 
             paymentService.Pay(this, totalAmount);
+            Console.WriteLine("Employee Pay");
         }
     }
 }
