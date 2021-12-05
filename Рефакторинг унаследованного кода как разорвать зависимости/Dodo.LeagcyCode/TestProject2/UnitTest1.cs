@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace TestProject2
 {
-    public class Tests
+    public class Tests1
     {
         [SetUp]
         public void Setup()
@@ -12,7 +12,7 @@ namespace TestProject2
         }
 
         [Test]
-        public void Test1()
+        public void Test()
         {
             Employee employee = new Employee();
             List<TimeEntry> timeEntries = new List<TimeEntry>();
