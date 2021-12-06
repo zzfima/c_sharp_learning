@@ -2,6 +2,6 @@
 {
     public class ShoppingCart
     {
-        public int TotalPrice { get; private set; }
+        public int TotalPrice { get; set; }
     }
 }
