@@ -1,22 +1,30 @@
-using Dodo.LegacyCode.WrapClass;
+using Dodo.ExtractAndOverride;
 using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace TestProject2
 {
-    public class UnitTestExtractAndOverride
+    public class WhenPrintReceipt
     {
-        [SetUp]
-        public void Setup()
+        [Test]
+        public void ShouldPrintFooterLine()
         {
+            Printer printer = new Printer();
+            printer.PrintReceipt(new ShoppingCart());
+            Assert.Pass();
         }
 
         [Test]
-        public void Test()
+        public void ShouldPrintFooterLineTestable()
         {
-            
-
-            Assert.Pass();
+            TestablePrinter printer = new TestablePrinter();
+            printer.PrintReceipt(new ShoppingCart());
+            List<string> textToPrint = new List<string>();
+            textToPrint.Add("-----Receipt-------");
+            textToPrint.Add("-------------------");
+            textToPrint.Add("-----Total--------");
+            textToPrint.Add("----- 0 ---------");
+            Assert.AreEqual(printer.TextToPrint, textToPrint);
         }
     }
 }
