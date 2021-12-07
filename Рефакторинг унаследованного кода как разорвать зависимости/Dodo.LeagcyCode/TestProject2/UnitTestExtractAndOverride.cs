@@ -24,7 +24,8 @@ namespace TestProject2
             textToPrint.Add("-------------------");
             textToPrint.Add("-----Total--------");
             textToPrint.Add("----- 60 ---------");
-            Assert.AreEqual(printer.TextToPrint, textToPrint);
+            Assert.AreEqual(textToPrint, printer.TextToPrint);
+            Assert.AreEqual("<<Shopping cart items>>", printer.TerminalFake.Line);
         }
     }
 }
