@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodo.ExtractAndOverride", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelDesign", "ParallelDesign\ParallelDesign.csproj", "{EA455FDF-FF1E-41F2-BE43-EF9B52634177}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticClass", "StaticClass\StaticClass.csproj", "{9A9D48E7-E555-470D-BE7F-DB97F1D0DAE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EA455FDF-FF1E-41F2-BE43-EF9B52634177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA455FDF-FF1E-41F2-BE43-EF9B52634177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA455FDF-FF1E-41F2-BE43-EF9B52634177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9D48E7-E555-470D-BE7F-DB97F1D0DAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9D48E7-E555-470D-BE7F-DB97F1D0DAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9D48E7-E555-470D-BE7F-DB97F1D0DAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9D48E7-E555-470D-BE7F-DB97F1D0DAE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

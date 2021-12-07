@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Dodo.LeagcyCode\Dodo.LeagcyCode.csproj" />
     <ProjectReference Include="..\Dodo.LegacyCode.WrapClass\Dodo.LegacyCode.WrapClass.csproj" />
     <ProjectReference Include="..\ParallelDesign\ParallelDesign.csproj" />
+    <ProjectReference Include="..\StaticClass\StaticClass.csproj" />
   </ItemGroup>
 
 </Project>
