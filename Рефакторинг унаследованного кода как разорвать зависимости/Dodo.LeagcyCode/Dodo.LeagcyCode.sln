@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject2", "TestProject
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodo.ExtractAndOverride", "Dodo.ExtractAndOverride\Dodo.ExtractAndOverride.csproj", "{373BF188-7E66-4A9C-B59B-E9C78533C453}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelDesign", "ParallelDesign\ParallelDesign.csproj", "{EA455FDF-FF1E-41F2-BE43-EF9B52634177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{373BF188-7E66-4A9C-B59B-E9C78533C453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{373BF188-7E66-4A9C-B59B-E9C78533C453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{373BF188-7E66-4A9C-B59B-E9C78533C453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA455FDF-FF1E-41F2-BE43-EF9B52634177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA455FDF-FF1E-41F2-BE43-EF9B52634177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA455FDF-FF1E-41F2-BE43-EF9B52634177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA455FDF-FF1E-41F2-BE43-EF9B52634177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

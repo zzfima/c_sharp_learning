@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Dodo.ExtractAndOverride\Dodo.ExtractAndOverride.csproj" />
     <ProjectReference Include="..\Dodo.LeagcyCode\Dodo.LeagcyCode.csproj" />
     <ProjectReference Include="..\Dodo.LegacyCode.WrapClass\Dodo.LegacyCode.WrapClass.csproj" />
+    <ProjectReference Include="..\ParallelDesign\ParallelDesign.csproj" />
   </ItemGroup>
 
 </Project>
