@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Dodo.ExtractAndOverride
 {
@@ -10,28 +9,18 @@ namespace Dodo.ExtractAndOverride
             WriteLine("-----Receipt-------");
             WriteLine("-------------------");
 
-            var terminal = new Terminal();
+            var terminal = CreateTerminal();
             terminal.PrintLine("<<Shopping cart items>>");
 
             WriteLine("-----Total--------");
             WriteLine($"----- {shoppingCart.TotalPrice} ---------");
         }
 
+        protected virtual Terminal CreateTerminal()
+        {
+            return new Terminal();
+        }
+
         protected virtual void WriteLine(string line) => Console.WriteLine(line);
-    }
-
-    public class TestablePrinter : Printer
-    {
-        public List<string> TextToPrint { private set; get; }
-
-        public TestablePrinter()
-        {
-            TextToPrint = new List<string>();
-        }
-
-        protected override void WriteLine(string line)
-        {
-            TextToPrint.Add(line);
-        }
     }
 }
