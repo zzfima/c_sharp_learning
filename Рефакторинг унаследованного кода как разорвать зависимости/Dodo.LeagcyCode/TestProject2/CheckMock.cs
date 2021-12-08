@@ -4,6 +4,7 @@ using Moq;
 
 namespace TestProject2
 {
+    //https://habr.com/ru/post/150859/
     public class CheckMock
     {
         [Test]
