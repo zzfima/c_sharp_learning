@@ -9,19 +9,20 @@ namespace TestProject2
         [Test]
         public void ShouldBe()
         {
-            string action="test";
-            Mock<SomeClass> mockSomeClass = new Mock<SomeClass>();
-            
-            mockSomeClass.Setup(mock => mock.DoSomething());
-            
-            MyClass myClass = new MyClass(mockSomeClass.Object);
-            myClass.MyMethod(action);
-            
-            // Explicitly verify each expectation...
-            mockSomeClass.Verify(mock => mock.DoSomething(), Times.Once());
-            
-            // ...or verify everything.
-            // mockSomeClass.VerifyAll();
+            ILoggerDependency loggerDependency =
+                Mock.Of<ILoggerDependency>(d => d.GetCurrentDirectory() == "D:\\Temp");
+            Assert.That(loggerDependency.GetCurrentDirectory(), Is.EqualTo("D:\\Temp"));
+
+            loggerDependency = Mock.Of<ILoggerDependency>(d => d.DefaultLogger == "default logger");
+            Assert.That(loggerDependency.DefaultLogger, Is.EqualTo("default logger"));
+
+            Mock<ILoggerDependency> stub = new Mock<ILoggerDependency>();
+            stub.Setup(ld => ld.GetDirectoryByLoggerName(It.IsAny<string>()))
+                .Returns<string>(name => "C:\\" + name);
+            string loggerName = "SomeLogger";
+            loggerDependency = stub.Object;
+            string directory = loggerDependency.GetDirectoryByLoggerName(loggerName);
+            Assert.That(directory, Is.EqualTo("C:\\SomeLogger"));
         }
     }
 }
