@@ -7,7 +7,7 @@ namespace TestProject2
     //https://habr.com/ru/post/150859/
     public class CheckMock
     {
-        [Test]
+        [Test, Category("Slow")]
         public void ShouldBe()
         {
             ILoggerDependency loggerDependency = Mock.Of<ILoggerDependency>(d => d.GetCurrentDirectory() == "D:\\Temp");
