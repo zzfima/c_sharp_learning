@@ -1,6 +1,6 @@
 ﻿using MockProject;
-using NUnit.Framework;
 using Moq;
+using NUnit.Framework;
 
 namespace TestProject2
 {
@@ -10,8 +10,7 @@ namespace TestProject2
         [Test]
         public void ShouldBe()
         {
-            ILoggerDependency loggerDependency =
-                Mock.Of<ILoggerDependency>(d => d.GetCurrentDirectory() == "D:\\Temp");
+            ILoggerDependency loggerDependency = Mock.Of<ILoggerDependency>(d => d.GetCurrentDirectory() == "D:\\Temp");
             Assert.That(loggerDependency.GetCurrentDirectory(), Is.EqualTo("D:\\Temp"));
 
             loggerDependency = Mock.Of<ILoggerDependency>(d => d.DefaultLogger == "default logger");

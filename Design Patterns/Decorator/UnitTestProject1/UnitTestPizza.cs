@@ -9,14 +9,14 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethodPizza()
         {
-            Pizza pizza = new Pizza();
+            Pizza pizza = new BasicPizza();
             Assert.AreEqual(pizza.Cost(), 50);
         }
 
         [TestMethod]
         public void TestMethodExtraCheesePizza()
         {
-            ICostable pizza = new Pizza();
+            Pizza pizza = new BasicPizza();
             pizza = new ExtraCheesePizza(pizza);
             Assert.AreEqual(pizza.Cost(), 60);
         }
@@ -24,11 +24,10 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethodExtraExtraExtraCheesePizza()
         {
-            ICostable pizza = new Pizza();
-            pizza = new ExtraCheesePizza(pizza);
-            pizza = new ExtraCheesePizza(pizza);
-            pizza = new ExtraCheesePizza(pizza);
-            Assert.AreEqual(pizza.Cost(), 80);
+            Pizza pizza = new BasicPizza(); //50
+            pizza = new ExtraCheesePizza(pizza); //10
+            pizza = new ExtraPapperonyPizza(pizza); //17
+            Assert.AreEqual(pizza.Cost(), 77);
         }
     }
 }
