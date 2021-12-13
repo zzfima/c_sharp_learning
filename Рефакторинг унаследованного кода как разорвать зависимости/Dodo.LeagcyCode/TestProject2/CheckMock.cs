@@ -22,7 +22,6 @@ namespace TestProject2
             string loggerName = "SomeLogger";
             loggerDependency = stub.Object;
             string directory = loggerDependency.GetDirectoryByLoggerName(loggerName);
-            Assert.That(directory, Is.EqualTo("C:\\SomeLogger"));
-        }
+            Assert.That(directory, Is.EqualTo("C:\\SomeLogger"));        }
     }
 }

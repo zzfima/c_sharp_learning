@@ -18,7 +18,8 @@ namespace UnitTestProject1
         {
             Pizza pizza = new BasicPizza();
             pizza = new ExtraCheesePizza(pizza);
-            Assert.AreEqual(pizza.Cost(), 60);
+            var actual = 60;
+            Assert.AreEqual(pizza.Cost(), actual);
         }
 
         [TestMethod]
@@ -26,7 +27,7 @@ namespace UnitTestProject1
         {
             Pizza pizza = new BasicPizza(); //50
             pizza = new ExtraCheesePizza(pizza); //10
-            pizza = new ExtraPapperonyPizza(pizza); //17
+            pizza = new ExtraPepperoniPizza(pizza); //17
             Assert.AreEqual(pizza.Cost(), 77);
         }
     }
