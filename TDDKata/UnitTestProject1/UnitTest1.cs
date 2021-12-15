@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System.ComponentModel;
+using System.Threading;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StringKataCalculator;
 
@@ -7,7 +9,7 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        [TestMethod, TestCategory("Fast")]
         public void ShouldReturnZeroWhenNoArguments()
         {
             //Arrange
@@ -21,7 +23,7 @@ namespace UnitTestProject1
         }
 
 
-        [TestMethod]
+        [TestMethod, TestCategory("slow")]
         public void ShouldReturnOneWhenArgumentOne()
         {
             //Arrange
@@ -29,6 +31,7 @@ namespace UnitTestProject1
 
             //Act
             var addResult = stringCalculator.Add("1");
+            Thread.Sleep(1000);
 
             //Assert
             addResult.Should().Be(1);
