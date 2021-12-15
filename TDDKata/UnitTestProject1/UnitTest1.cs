@@ -1,8 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StringKataCalculator;
-using Xunit;
-using FluentAssertions;
 
 namespace UnitTestProject1
 {
@@ -10,7 +8,7 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ShouldReturnZeroWhenNoArguments()
         {
             //Arrange
             var stringCalculator = new StringCalculator();
@@ -20,6 +18,20 @@ namespace UnitTestProject1
 
             //Assert
             addResult.Should().Be(0);
+        }
+
+
+        [TestMethod]
+        public void ShouldReturnOneWhenArgumentOne()
+        {
+            //Arrange
+            var stringCalculator = new StringCalculator();
+
+            //Act
+            var addResult = stringCalculator.Add("1");
+
+            //Assert
+            addResult.Should().Be(1);
         }
     }
 }
