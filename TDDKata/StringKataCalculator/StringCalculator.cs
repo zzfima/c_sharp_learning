@@ -7,7 +7,8 @@ namespace StringKataCalculator
     {
         public int Add(string numbers)
         {
-            return numbers.Equals(String.Empty) == true ?  0 :  int.Parse(numbers);
+            var hasParse = int.TryParse(numbers, out var res);
+            return hasParse ? res : 0;
         }
     }
 }
