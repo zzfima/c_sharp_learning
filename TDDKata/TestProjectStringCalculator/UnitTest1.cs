@@ -18,5 +18,18 @@ namespace TestProjectStringCalculator
             //Assert
             addResult.Should().Be(0);
         }
+
+        [Fact]
+        public void ShouldReturn1For1()
+        {
+            //Arrange
+            var stringCalculator = new StringCalculator();
+
+            //Act
+            var addResult = stringCalculator.Add("1");
+
+            //Assert
+            addResult.Should().Be(1);
+        }
     }
 }
