@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharperTipsTricks", "ReSharperTipsTricks\ReSharperTipsTricks.csproj", "{A45C6F14-2C21-499A-907A-4F480BD5A95A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{4BA7DE30-20EE-41A4-A822-4E11054B3C4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A45C6F14-2C21-499A-907A-4F480BD5A95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45C6F14-2C21-499A-907A-4F480BD5A95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45C6F14-2C21-499A-907A-4F480BD5A95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45C6F14-2C21-499A-907A-4F480BD5A95A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA7DE30-20EE-41A4-A822-4E11054B3C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA7DE30-20EE-41A4-A822-4E11054B3C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA7DE30-20EE-41A4-A822-4E11054B3C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA7DE30-20EE-41A4-A822-4E11054B3C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2F118B8-0D03-4CFD-9785-5231BA859E27}
+	EndGlobalSection
+EndGlobal
