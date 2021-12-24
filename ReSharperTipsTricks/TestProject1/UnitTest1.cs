@@ -29,5 +29,12 @@ namespace TestProject1
             MyClass myClass = new MyClass(66);
             myClass.MyMethod().Should().Be(66);
         }
+
+        [Fact, Trait("Speed", "Fast")]
+        public void Test4()
+        {
+            MyClass myClass = new MyClass(66);
+            myClass.MyMethod().Should().Be(66);
+        }
     }
 }
