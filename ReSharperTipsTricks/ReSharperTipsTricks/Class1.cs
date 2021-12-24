@@ -2,21 +2,21 @@
 {
     public class MyClass
     {
-        private int v;
+        private readonly int _v;
 
         public MyClass(int v)
         {
-            this.v = v;
-            myVal = v;
+            this._v = v;
+            MyVal = v;
         }
 
-        public int myVal { get; set; }
+        public int MyVal { get; set; }
 
-        public int VL { get; set; }
+        public int Vl { get; set; }
         
         public int MyMethod()
         {
-            return v;
+            return _v;
         }
     }
 }

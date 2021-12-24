@@ -10,8 +10,8 @@ namespace TestProject1
         public void Test1()
         {
             MyClass myClass = new MyClass(2);
-            myClass.VL = 7;
-            myClass.VL.Should().Be(7);
+            myClass.Vl = 7;
+            myClass.Vl.Should().Be(7);
         }
 
         [Fact]
