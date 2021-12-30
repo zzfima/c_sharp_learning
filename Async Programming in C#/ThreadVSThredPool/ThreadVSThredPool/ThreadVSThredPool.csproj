@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E4A05240-43BF-4330-8817-FCABC28B859E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ThreadVSThredPool</RootNamespace>
-    <AssemblyName>ThreadVSThredPool</AssemblyName>
+    <RootNamespace>ThreadVSThreadPool</RootNamespace>
+    <AssemblyName>ThreadVSThreadPool</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

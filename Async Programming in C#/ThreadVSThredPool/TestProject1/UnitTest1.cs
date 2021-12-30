@@ -1,5 +1,5 @@
 using FluentAssertions;
-using ThreadVSThredPool;
+using ThreadVSThreadPool;
 using Xunit;
 
 namespace TestProject1
@@ -11,7 +11,7 @@ namespace TestProject1
         {
             ConcreteMixer concreteMixer = new ConcreteMixer(11, 1);
             concreteMixer.ToString().Should().Be("ConcreteAmount: 11, WaterAmount: 1");
-        }  
+        }
 
         [Fact]
         public void TestConstructConcreteMixer2()
@@ -41,6 +41,13 @@ namespace TestProject1
         {
             ConcreteMixer concreteMixer1 = new ConcreteMixer(44, 4.5);
             ConcreteMixer concreteMixer2 = new ConcreteMixer(44, 4.5);
+        }
+
+        [Fact]
+        public void TestGetHashCode()
+        {
+            ConcreteMixer concreteMixer1 = new ConcreteMixer(44, 4.5);
+            concreteMixer1.GetHashCode().Should().Be(concreteMixer1.GetHashCode());
         }
     }
 }
