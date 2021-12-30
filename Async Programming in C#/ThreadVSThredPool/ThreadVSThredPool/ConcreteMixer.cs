@@ -1,21 +1,17 @@
-﻿using System.Collections.Generic;
-
-namespace ThreadVSThredPool
+﻿namespace ThreadVSThredPool
 {
     public class ConcreteMixer
     {
-        private double _concreteAmount;
-        private double _waterAmount;
+        private readonly double _concreteAmount;
+        private readonly double _waterAmount;
+        public double ConcreteAmount => _concreteAmount;
+        public double WaterAmount => _waterAmount;
 
         public ConcreteMixer(double concreteAmount, double waterAmount)
         {
             _waterAmount = waterAmount;
             _concreteAmount = concreteAmount;
         }
-
-        public double ConcreteAmount => _concreteAmount;
-
-        public double WaterAmount => _waterAmount;
 
         public override string ToString()
         {
@@ -31,8 +27,8 @@ namespace ThreadVSThredPool
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((ConcreteMixer)obj);
+            if (obj.GetType() != GetType()) return false;
+            return Equals((ConcreteMixer) obj);
         }
     }
 }
