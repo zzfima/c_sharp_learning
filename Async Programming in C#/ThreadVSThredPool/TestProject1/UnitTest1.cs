@@ -18,7 +18,7 @@ namespace TestProject1
         public void Test2()
         {
             ConcreteMixer concreteMixer = new ConcreteMixer(44, 4.5);
-            concreteMixer.ToString().Should().Be("ConcreteMixer: 44 of concrete and 4.5 of water");
+            concreteMixer.ToString().Should().Be("ConcreteAmount: 44, WaterAmount: 4.5");
         }
 
         [Fact]
