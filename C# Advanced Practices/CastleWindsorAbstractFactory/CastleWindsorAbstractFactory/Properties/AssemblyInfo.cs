@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CastleWindsorBootstrapper")]
+[assembly: AssemblyTitle("CastleWindsorAbstractFactory")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CastleWindsorBootstrapper")]
+[assembly: AssemblyProduct("CastleWindsorAbstractFactory")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0eff3138-0b96-433a-8d35-a54513a05082")]
+[assembly: Guid("7e9894ea-4185-47e6-80b0-1ec88448ab9a")]
 
 // Version information for an assembly consists of the following four values:
 //
