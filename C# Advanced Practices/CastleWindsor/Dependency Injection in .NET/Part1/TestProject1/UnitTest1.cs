@@ -14,7 +14,7 @@ namespace TestProject1
         [Fact]
         public void Test2()
         {
-            SauceClient client = new SauceClient();
+            SauceClient client = new SauceClient(false);
             client.GetIngredient().Name.Should().Be("French Sauce Bearnaise");
         }
     }
