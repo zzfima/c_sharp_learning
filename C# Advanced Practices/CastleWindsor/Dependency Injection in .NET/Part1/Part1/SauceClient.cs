@@ -10,7 +10,7 @@ namespace Part1
 
         public IIngredient GetIngredient() => _container.Resolve<IIngredient>();
 
-        public SauceClient(bool readConfigurationFromFile)
+        public SauceClient(bool readConfigurationFromFile = false)
         {
             if (readConfigurationFromFile)
             {
