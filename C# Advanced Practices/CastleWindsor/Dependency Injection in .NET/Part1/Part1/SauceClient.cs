@@ -8,7 +8,9 @@ namespace Part1
     {
         private readonly WindsorContainer _container;
 
-        public IIngredient GetIngredient() => _container.Resolve<IIngredient>();
+        public IIngredient GetIngredientIsraeli() => _container.Resolve<IIngredient>("Israeli");
+        public IIngredient GetIngredientBearnaise() => _container.Resolve<IIngredient>("Bearnaise");
+        public IIngredient GetIngredientDefault() => _container.Resolve<IIngredient>();
 
         public SauceClient(bool readConfigurationFromFile = false)
         {
@@ -20,7 +22,13 @@ namespace Part1
             else
             {
                 _container = new WindsorContainer();
-                _container.Register(Component.For<IIngredient>().ImplementedBy<SauceBearnaise>());
+                _container.Register(
+                    Component
+                        .For<IIngredient>()
+                        .ImplementedBy<SauceBearnaise>().Named("Bearnaise"), //First is a default
+                    Component
+                        .For<IIngredient>()
+                        .ImplementedBy<IsraeliSauce>().Named("Israeli"));
             }
         }
     }
