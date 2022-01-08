@@ -50,9 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IIngredient.cs" />
-    <Compile Include="IsraeliSauce.cs" />
-    <Compile Include="SauceBearnaise.cs" />
+    <Compile Include="Interfaces\IIngredient.cs" />
+    <Compile Include="Implementations\IsraeliSauce.cs" />
+    <Compile Include="Implementations\SauceBearnaise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SauceClient.cs" />
   </ItemGroup>
@@ -64,5 +64,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

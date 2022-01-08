@@ -1,6 +1,8 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Configuration.Interpreters;
+using Part1.Implementations;
+using Part1.Interfaces;
 
 namespace Part1
 {

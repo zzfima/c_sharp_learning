@@ -1,4 +1,6 @@
-﻿namespace Part1
+﻿using Part1.Interfaces;
+
+namespace Part1.Implementations
 {
     public class IsraeliSauce : IIngredient
     {

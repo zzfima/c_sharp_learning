@@ -1,4 +1,4 @@
-﻿namespace Part1
+﻿namespace Part1.Interfaces
 {
     public interface IIngredient
     {
