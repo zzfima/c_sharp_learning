@@ -22,13 +22,8 @@ namespace Part1
             else
             {
                 _container = new WindsorContainer();
-                _container.Register(
-                    Component
-                        .For<IIngredient>()
-                        .ImplementedBy<SauceBearnaise>().Named("Bearnaise"), //First is a default
-                    Component
-                        .For<IIngredient>()
-                        .ImplementedBy<IsraeliSauce>().Named("Israeli"));
+                _container.Register(Component.For<IIngredient>().ImplementedBy<SauceBearnaise>().Named("Bearnaise")); //First IIngredient is a default
+                _container.Register(Component.For<IIngredient>().ImplementedBy<IsraeliSauce>().Named("Israeli"));
             }
         }
     }
