@@ -1,4 +1,3 @@
-using System;
 using ATM;
 using FluentAssertions;
 using Xunit;
@@ -10,21 +9,21 @@ namespace TestProject1
         [Fact]
         public void TestDebitCardNotInsertedEnterPin()
         {
-            IAtmState state = new DebitCardNotInsertedState();
+            var state = new DebitCardNotInsertedState();
             state.EnterPin().Should().Be("You cannot enter the pin, as no Debit Card in ATM Machine slot");
         }
 
         [Fact]
         public void TestDebitCardInsertedEnterPin()
         {
-            IAtmState state = new DebitCardInsertedState();
+            var state = new DebitCardInsertedState();
             state.EnterPin().Should().Be("Pin number has been entered correctly");
         }
 
         [Fact]
         public void TestAtmMachine()
         {
-            AtmMachine atmMachine = new AtmMachine();
+            var atmMachine = new AtmMachine();
             atmMachine.AtmMachineState.GetType().Name.Should().Be("DebitCardNotInsertedState");
             atmMachine.EnterPin().Should().Be("You cannot enter the pin, as no Debit Card in ATM Machine slot");
             atmMachine.WithdrawMoney().Should().Be("You cannot withdraw money, as no Debit Card in ATM Machine slot");
