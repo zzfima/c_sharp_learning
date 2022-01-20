@@ -2,7 +2,7 @@ using ATM;
 using FluentAssertions;
 using Xunit;
 
-namespace TestProject1
+namespace ATMTests
 {
     public class UnitTest1
     {
