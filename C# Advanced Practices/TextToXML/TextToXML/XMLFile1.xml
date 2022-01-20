@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DiagUIExtensionsConfiguration>
+	<VendorDiagnosticsApplications xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<ApplicationHostingInformation ApplicationName="Sinfonia" MenuOptionName="Shinko Utility" DeviceType="Loaders" RelevantEFEMTypes="Shinko" ExecutableName="Diagnostics.Configuration.exe" ExecutableLocations="C:windowssystem32;C:Program FilesKLA-TencorComponent Suitebin" CommandLineArgs="" ShouldStopMHService="false" />
+	</VendorDiagnosticsApplications>
+	<PhoenixApplications xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<PhoenixApplicationHostingInformation ApplicationName="WTA" MenuOptionName="Wafer Transfer" ExecutableName="WaferTransfer.exe" ExecutableLocations="C:Program FilesKLA-TencorASD PhoenixBinaries" CommandLineArgs="" ShouldStopMHService="false" />
+		<PhoenixApplicationHostingInformation ApplicationName="TP" MenuOptionName="Throughput" ExecutableName="Throughput.exe" ExecutableLocations="C:Program FilesKLA-TencorASD PhoenixBinaries" CommandLineArgs="" ShouldStopMHService="false" />
+	</PhoenixApplications>
+	<PhxDiagViewNavigationInformation NavOptionName="NavPhoenixDiagnostics">
+		<LeafNavigationInformation NavOptionName="NavHardware" PageName="Hardware Status" TypeInfo="DiagnosticExtensions.HardwareStatus, DiagnosticExtensions" />
+		<LeafNavigationInformation NavOptionName="NavInterlock" PageName="Interlock Status" TypeInfo="DiagnosticExtensions.InterlockStatus, DiagnosticExtensions" />
+	</PhxDiagViewNavigationInformation>
+</DiagUIExtensionsConfiguration>
