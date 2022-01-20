@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtmMachine.cs" />
     <Compile Include="DebitCardInsertedState.cs" />
     <Compile Include="DebitCardNotInsertedState.cs" />
     <Compile Include="IAtmState.cs" />
