@@ -26,9 +26,11 @@ namespace HandlerTests
             handlerMachine.HandlerState.GetType().Name.Should().Be("SubstrateOnEndEffector");
 
             handlerMachine.MoveToStage().Should().Be("Substrate move to stage");
+            handlerMachine.MoveToFoup().Should().Be("Substrate can not move to foup");
             handlerMachine.HandlerState.GetType().Name.Should().Be("SubstrateOnStage");
 
             handlerMachine.MoveToEndEffector().Should().Be("Substrate move to end effector");
+            handlerMachine.MoveToEndEffector().Should().Be("Substrate already here");
             handlerMachine.HandlerState.GetType().Name.Should().Be("SubstrateOnEndEffector");
 
             handlerMachine.MoveToFoup().Should().Be("Substrate move to foup");
