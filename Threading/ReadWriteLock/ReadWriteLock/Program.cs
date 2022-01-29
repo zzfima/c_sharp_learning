@@ -51,7 +51,8 @@ namespace ReadWriteLock
                 else
                     Console.WriteLine("User already exists");
                 //The write lock is being released without being held
-                //await Task.Delay(50);
+                //await Task.Delay(250);
+                Thread.Sleep(250);
                 _lockSlim.ExitWriteLock();
             }
         }
