@@ -5,9 +5,10 @@
         public static void Main(string[] args)
         {
             Calculator calc = new Calculator();
-            System.Console.WriteLine(calc.Add(1, 2));
-
-            Console.ReadLine();
+            Random rnd = new Random();
+            int a = rnd.Next(0, 100);
+            int b = rnd.Next(0, 100);
+            System.Console.WriteLine(calc.Add(a, b));
         }
     }
 }
