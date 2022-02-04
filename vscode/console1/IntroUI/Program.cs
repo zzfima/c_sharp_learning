@@ -4,7 +4,10 @@
     {
         public static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello World!");
+            Calculator calc = new Calculator();
+            System.Console.WriteLine(calc.Add(1, 2));
+
+            Console.ReadLine();
         }
     }
 }

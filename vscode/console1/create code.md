@@ -13,3 +13,8 @@ to add assets:
 to open vscode for specific location:
     cd location
     Code .
+
+build:
+    dotnet build
+    dotnet build --configuration Release
+    dotnet build --configuration Debug
