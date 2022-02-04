@@ -10,10 +10,14 @@ namespace IntroLibrary
                         .WriteTo.Console()
                         .WriteTo.File("myLog.log")
                         .CreateLogger();
-            Log.Information("Adding operation");
+            Log.Warning("Adding operation");
             Log.Information("Adding {a} and {b}", a, b);
+            if (a + b > 50)
+            {
+                Log.Error("Result is greater than 50");
+            }
+        
             Log.CloseAndFlush();
-
             return a + b;
         }
     }
