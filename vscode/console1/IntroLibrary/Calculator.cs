@@ -14,10 +14,11 @@ namespace IntroLibrary
             Log.Warning("Adding operation");
             Log.Information("Adding {a} and {b}", a, b);
             if (a + b > 50)
-            {
+            {//
                 Log.Error("Result is greater than 50");
             }
-        
+    //what is it?
+    //its log!
             Log.CloseAndFlush();
             return a + b;
         }
