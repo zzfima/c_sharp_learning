@@ -9,6 +9,7 @@ namespace IntroLibrary
             Log.Logger = new LoggerConfiguration()
                         .WriteTo.Console()
                         .WriteTo.File("myLog.log")
+                        .WriteTo.File("myLog2.log", rollingInterval: RollingInterval.Minute)
                         .CreateLogger();
             Log.Warning("Adding operation");
             Log.Information("Adding {a} and {b}", a, b);
