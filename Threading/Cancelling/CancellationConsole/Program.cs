@@ -6,12 +6,13 @@
         {
             var cts = new CancellationTokenSource();
             var token = cts.Token;
-            var task = Task.Run(() =>
+
+            var task = Task.Run(async () =>
             {
                 while (!token.IsCancellationRequested)
                 {
                     Console.WriteLine("Hello World!");
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
                 }
             }, token);  // pass the token to the task
 
