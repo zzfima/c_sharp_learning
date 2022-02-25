@@ -37,6 +37,18 @@ namespace StockAnalyzer.Windows
 
             try
             {
+                //bad model
+                /*
+                new System.Threading.Thread(() =>
+                {
+                    var store = new DataStore();
+                    var stockPricesTask = store.GetStockPrices(StockIdentifier.Text);
+                    var stockPrices = stockPricesTask.Result;
+                    Stocks.ItemsSource = stockPrices;
+                }).Start();
+                */
+
+                //good model
                 var store = new DataStore();
                 var stockPricesTask = store.GetStockPrices(StockIdentifier.Text);
                 var stockPrices = await stockPricesTask;
@@ -47,12 +59,11 @@ namespace StockAnalyzer.Windows
                 Notes.Background = System.Windows.Media.Brushes.Red;
                 Notes.Text += "\n";
                 Notes.Text += ex.Message;
-                Notes.Foreground = System.Windows.Media.Brushes.Yellow; 
+                Notes.Foreground = System.Windows.Media.Brushes.Yellow;
             }
 
             AfterLoadingStockData();
         }
-
 
         private void BeforeLoadingStockData()
         {
