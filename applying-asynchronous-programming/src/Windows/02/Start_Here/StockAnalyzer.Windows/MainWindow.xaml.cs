@@ -37,7 +37,7 @@ namespace StockAnalyzer.Windows
 
             try
             {
-                //bad model
+                //bad model: cross thread etc
                 /*
                 new System.Threading.Thread(() =>
                 {
