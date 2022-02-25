@@ -1,12 +1,7 @@
-﻿using System.Collections;
-using Newtonsoft.Json;
+﻿using StockAnalyzer.Core;
 using StockAnalyzer.Core.Domain;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Net;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 
@@ -27,6 +22,7 @@ namespace StockAnalyzer.Windows
         {
             BeforeLoadingStockData();
 
+            /*
             using (var client = new HttpClient())
             {
                 var responseTask = client.GetAsync($"{API_URL}/{StockIdentifier.Text}");
@@ -37,6 +33,22 @@ namespace StockAnalyzer.Windows
                 var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
                 Stocks.ItemsSource = data;
             }
+            */
+
+            try
+            {
+                var store = new DataStore();
+                var stockPricesTask = store.GetStockPrices(StockIdentifier.Text);
+                var stockPrices = await stockPricesTask;
+                Stocks.ItemsSource = stockPrices;
+            }
+            catch (System.Exception ex)
+            {
+                Notes.Background = System.Windows.Media.Brushes.Red;
+                Notes.Text += "\n";
+                Notes.Text += ex.Message;
+                Notes.Foreground = System.Windows.Media.Brushes.Yellow; 
+            }
 
             AfterLoadingStockData();
         }
@@ -44,6 +56,9 @@ namespace StockAnalyzer.Windows
 
         private void BeforeLoadingStockData()
         {
+            Notes.Background = System.Windows.Media.Brushes.White;
+            Notes.Foreground = System.Windows.Media.Brushes.Black;
+
             stopwatch.Restart();
             StockProgress.Visibility = Visibility.Visible;
             StockProgress.IsIndeterminate = true;
