@@ -33,7 +33,7 @@ namespace StockAnalyzer.Windows
                 var response = await responseTask;
                 var contentTask = response.Content.ReadAsStringAsync();
                 var content = await contentTask;
-                await Task.Delay(5000);
+                await Task.Delay(1000);
                 var data = JsonConvert.DeserializeObject<IEnumerable<StockPrice>>(content);
                 Stocks.ItemsSource = data;
             }
