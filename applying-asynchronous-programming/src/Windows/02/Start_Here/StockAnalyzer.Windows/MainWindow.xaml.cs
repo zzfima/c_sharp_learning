@@ -2,6 +2,7 @@
 using StockAnalyzer.Core.Domain;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 
@@ -49,10 +50,7 @@ namespace StockAnalyzer.Windows
                 */
 
                 //good model
-                var store = new DataStore();
-                var stockPricesTask = store.GetStockPrices(StockIdentifier.Text);
-                var stockPrices = await stockPricesTask;
-                Stocks.ItemsSource = stockPrices;
+                Stocks.ItemsSource = await GetStocks();
             }
             catch (System.Exception ex)
             {
@@ -63,6 +61,14 @@ namespace StockAnalyzer.Windows
             }
 
             AfterLoadingStockData();
+        }
+
+        private async Task<IList<StockPrice>> GetStocks()
+        {
+            var store = new DataStore();
+            var stockPricesTask = store.GetStockPrices(StockIdentifier.Text);
+            var stockPrices = await stockPricesTask;
+            return stockPrices;
         }
 
         private void BeforeLoadingStockData()
