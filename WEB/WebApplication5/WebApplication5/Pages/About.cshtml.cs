@@ -13,6 +13,14 @@ namespace WebApplication5.Pages
 
         public void OnGet()
         {
+            SavedTime = "CRUD Saved Time";
+        }
+
+        public string SavedTime { get; set; }
+
+        public void OnPostSaveTimeClick(int id)
+        {
+            SavedTime = "Edit handler fired";
         }
     }
 }

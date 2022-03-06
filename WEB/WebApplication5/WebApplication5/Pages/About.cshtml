@@ -6,3 +6,11 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Created by monkey </p>
+<h1>Time from repository:</h1>
+<label>@Model.SavedTime</label>
+
+<div class="col-lg-1">
+	<form asp-page-handler="saveTimeClick" method="post">
+		<button>SaveTime</button>
+	</form>
+</div>
