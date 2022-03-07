@@ -14,18 +14,19 @@ namespace WebApplication5.Pages
             _programTest = new ProgramTest();
         }
 
-        public async void OnGet()
+        public async Task OnGet()
         {
             await _programTest.InitClient();
             var v = await _programTest.GetSavedTimeItemAsync();
-            SavedTime = v.ToLongDateString();
+            SavedTime = v;
         }
 
-        public string SavedTime { get; set; }
+        public DateTime SavedTime { get; set; }
 
-        public void OnPostSaveTimeClick(int id)
+        public async void OnPostSaveTimeClick(int id)
         {
-            SavedTime = DateTime.Now.ToLongTimeString();
+            SavedTime = DateTime.Now;
+            await _programTest.SaveTimeItemAsync(SavedTime);
         }
     }
 }

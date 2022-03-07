@@ -67,7 +67,7 @@ namespace SavedTimesCosmos
             await this.ScaleContainerAsync();
             await this.AddItemsToContainerAsync();
             await this.QueryItemsAsync();
-            await this.ReplaceSavedTimeItemAsync();
+            await this.SaveTimeItemAsync(DateTime.Now);
             await this.DeleteSavedTimeItemAsync();
             await this.DeleteDatabaseAndCleanupAsync();
         }
@@ -213,7 +213,6 @@ namespace SavedTimesCosmos
         }
         // </QueryItemsAsync>
 
-
         public async Task<DateTime> GetSavedTimeItemAsync()
         {
             ItemResponse<SavedTimeEntity> response =
@@ -224,18 +223,14 @@ namespace SavedTimesCosmos
             return itemBody.SavedTime;
         }
 
-        // <ReplaceFamilyItemAsync>
-        /// <summary>
-        /// Replace an item in the container
-        /// </summary>
-        public async Task ReplaceSavedTimeItemAsync()
+        public async Task SaveTimeItemAsync(DateTime dt)
         {
             ItemResponse<SavedTimeEntity> response =
                 await this.container.ReadItemAsync<SavedTimeEntity>("Morning.1", new PartitionKey("Morning"));
             var itemBody = response.Resource;
 
             // update SavedTime  to now
-            itemBody.SavedTime = DateTime.Now;
+            itemBody.SavedTime = dt;
 
 
             // replace the item with the updated content
@@ -244,7 +239,6 @@ namespace SavedTimesCosmos
                     new PartitionKey(itemBody.PartitionKey));
             Console.WriteLine("Updated SavedTime");
         }
-        // </ReplaceFamilyItemAsync>
 
         // <DeleteFamilyItemAsync>
         /// <summary>
