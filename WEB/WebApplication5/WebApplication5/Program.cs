@@ -1,4 +1,4 @@
-using SavedTimesCosmos;
+using CosmosClient;
 
 public static class Program
 {
