@@ -1,7 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -30,6 +29,7 @@ namespace SavedTimesCosmos
         private string containerId = "Items";
 
         // <Main>
+        /*
         public async Task MainTest()
         {
             try
@@ -53,12 +53,14 @@ namespace SavedTimesCosmos
                 Console.ReadKey();
             }
         }
+        */
         // </Main>
 
         // <GetStartedDemoAsync>
         /// <summary>
         /// Entry point to call methods that operate on Azure Cosmos DB resources in this sample
         /// </summary>
+        /*
         public async Task GetStartedDemoAsync()
         {
             CreateInstance();
@@ -71,7 +73,7 @@ namespace SavedTimesCosmos
             await this.DeleteSavedTimeItemAsync();
             await this.DeleteDatabaseAndCleanupAsync();
         }
-
+        */
         public async Task InitClient()
         {
             CreateInstance();
@@ -147,7 +149,7 @@ namespace SavedTimesCosmos
         /// <summary>
         /// Add Family items to the container
         /// </summary>
-        public async Task AddItemsToContainerAsync()
+        private async Task AddItemsToContainerAsync()
         {
             // Create a family object for the Morning.1 entity
             SavedTimeEntity entity = new SavedTimeEntity
@@ -187,7 +189,7 @@ namespace SavedTimesCosmos
         /// Run a query (using Azure Cosmos DB SQL syntax) against the container
         /// Including the partition key value of lastName in the WHERE filter results in a more efficient query
         /// </summary>
-        public async Task<List<SavedTimeEntity>> QueryItemsAsync()
+        private async Task<List<SavedTimeEntity>> QueryItemsAsync()
         {
             var sqlQueryText = "SELECT * FROM c WHERE c.PartitionKey = 'Morning'";
 
@@ -231,7 +233,6 @@ namespace SavedTimesCosmos
 
             // update SavedTime  to now
             itemBody.SavedTime = dt;
-
 
             // replace the item with the updated content
             response =
