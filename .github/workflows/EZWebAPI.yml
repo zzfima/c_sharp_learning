@@ -31,7 +31,7 @@ jobs:
       run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
 
     - name: Publish
-      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} -f netcoreapp2.0 --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} -f netcoreapp3.1 --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
 
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
