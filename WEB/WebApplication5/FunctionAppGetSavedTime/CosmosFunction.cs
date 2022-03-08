@@ -1,13 +1,13 @@
 using System;
-using System.IO;
-using System.Threading.Tasks;
 using CosmosClient;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace FunctionAppGetSavedTime
 {
@@ -21,8 +21,21 @@ namespace FunctionAppGetSavedTime
             _programTest.InitClient();
         }
 
+        [FunctionName("FunctionGetSavedTime")]
+        public static async Task<IActionResult> RunFunctionGetSavedTime(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]
+            HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("C# HTTP trigger function processed a request.");
+
+            DateTime dt = await _programTest.GetSavedTimeItemAsync();
+
+            return new OkObjectResult(dt);
+        }
+
         [FunctionName("Function1")]
-        public static async Task<IActionResult> Run(
+        public static async Task<IActionResult> RunFunction1(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
             HttpRequest req,
             ILogger log)
